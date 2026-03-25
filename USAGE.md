@@ -10,7 +10,7 @@ https://github.com/settings/tokens/new
 Login bij de registry:
 
 ```bash
-npm login --registry=https://npm.pkg.github.com --scope=@hienfeld
+npm login --registry=https://npm.pkg.github.com --scope=@stefhienfeld
 ```
 
 ### 2. Project .npmrc
@@ -18,17 +18,17 @@ npm login --registry=https://npm.pkg.github.com --scope=@hienfeld
 Kopieer `.npmrc.consumer-template` naar je project root als `.npmrc`:
 
 ```
-@hienfeld:registry=https://npm.pkg.github.com
+@stefhienfeld:registry=https://npm.pkg.github.com
 ```
 
-Of maak het handmatig aan. Dit vertelt npm: "haal @hienfeld packages op bij GitHub."
+Of maak het handmatig aan. Dit vertelt npm: "haal @stefhienfeld packages op bij GitHub."
 
 ---
 
 ## Installatie
 
 ```bash
-npm install @hienfeld/design-system
+npm install @stefhienfeld/design-system
 ```
 
 ---
@@ -39,10 +39,10 @@ npm install @hienfeld/design-system
 
 ```tsx
 // In je root/layout bestand (bijv. App.tsx of layout.tsx)
-import '@hienfeld/design-system/styles.css';
+import '@stefhienfeld/design-system/styles.css';
 
 // Gebruik componenten overal
-import { Button, CTALink, Accordion } from '@hienfeld/design-system';
+import { Button, CTALink, Accordion } from '@stefhienfeld/design-system';
 
 function MijnPagina() {
   return (
@@ -58,7 +58,7 @@ function MijnPagina() {
 
 ```css
 /* In je globale CSS */
-@import '@hienfeld/design-system/tokens.css';
+@import '@stefhienfeld/design-system/tokens.css';
 
 /* Nu kun je alle Hienfeld tokens gebruiken */
 .mijn-element {
@@ -87,7 +87,7 @@ Maak een eigen CSS bestand en laad het NA de design system CSS:
 ```
 
 ```tsx
-import '@hienfeld/design-system/styles.css';
+import '@stefhienfeld/design-system/styles.css';
 import './project-theme.css';  // MOET na design system CSS
 ```
 
@@ -96,7 +96,7 @@ Alle componenten passen zich automatisch aan.
 ### Componenten wrappen
 
 ```tsx
-import { Button } from '@hienfeld/design-system';
+import { Button } from '@stefhienfeld/design-system';
 
 // Project-specifieke variant
 function SubmitButton({ label }: { label: string }) {
@@ -123,7 +123,7 @@ Ze zien er automatisch Hienfeld uit.
 
 ## Beschikbare tokens
 
-Zie `node_modules/@hienfeld/design-system/dist/tokens.css` voor de volledige lijst. De belangrijkste:
+Zie `node_modules/@stefhienfeld/design-system/dist/tokens.css` voor de volledige lijst. De belangrijkste:
 
 | Categorie | Voorbeelden |
 |-----------|------------|
@@ -154,7 +154,7 @@ CTALink, Accordion, ProductCard, WebsiteFooter, WebsiteNav, HeroSection, Section
 ## Versies updaten
 
 ```bash
-npm update @hienfeld/design-system
+npm update @stefhienfeld/design-system
 ```
 
 Wij volgen semantic versioning:
