@@ -1,0 +1,210 @@
+/* ============================================================
+   NavItemBase Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+
+   BEM block: .nav-item
+   States: default / hover / active / focused
+   Variants: expanded (default) / collapsed (icon-only)
+   ============================================================ */
+
+/* ---------- base ---------- */
+.nav-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--spacing-xxs) 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  text-decoration: none;
+  text-align: left;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---------- inner content wrapper ---------- */
+.nav-item__content {
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+  min-width: 0;
+  min-height: 1px;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-primary);
+  transition: background-color 120ms ease, box-shadow 120ms ease;
+}
+
+/* ---------- icon slot ---------- */
+.nav-item__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--fg-quaternary);
+  transition: color 120ms ease;
+}
+
+.nav-item__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- dot indicator ---------- */
+.nav-item__dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+}
+
+/* ---------- text + icon group ---------- */
+.nav-item__text-group {
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+  min-width: 0;
+  min-height: 1px;
+  gap: var(--spacing-md);
+}
+
+/* ---------- label ---------- */
+.nav-item__label {
+  flex-shrink: 0;
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 120ms ease;
+}
+
+/* ---------- count badge ---------- */
+.nav-item__count {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: var(--spacing-xxs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-700);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ---------- badge (text badge) ---------- */
+.nav-item__badge {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: var(--spacing-xxs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  background-color: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-700);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ---------- chevron (trailing icon) ---------- */
+.nav-item__chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--fg-quaternary);
+  transition: color 120ms ease;
+}
+
+.nav-item__chevron svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ============================================================
+   STATE — HOVER (non-active)
+   ============================================================ */
+.nav-item:hover:not(.nav-item--active) .nav-item__content {
+  background-color: var(--bg-primary-hover);
+}
+
+.nav-item:hover .nav-item__label {
+  color: var(--text-secondary-hover);
+}
+
+.nav-item:hover .nav-item__icon {
+  color: var(--fg-quaternary-hover);
+}
+
+/* ============================================================
+   STATE — FOCUS-VISIBLE
+   ============================================================ */
+.nav-item:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+  border-radius: var(--radius-sm);
+}
+
+.nav-item:focus-visible .nav-item__content {
+  box-shadow: none;
+}
+
+/* ============================================================
+   STATE — ACTIVE
+   ============================================================ */
+.nav-item--active .nav-item__content {
+  background-color: var(--color-brand-50);
+}
+
+.nav-item--active .nav-item__icon {
+  color: var(--fg-brand-primary);
+}
+
+.nav-item--active .nav-item__label {
+  color: var(--text-secondary-hover);
+}
+
+.nav-item--active:hover .nav-item__content {
+  background-color: var(--color-brand-100);
+}
+
+/* ============================================================
+   VARIANT — COLLAPSED (icon-only)
+   ============================================================ */
+.nav-item--collapsed {
+  width: 44px;
+}
+
+.nav-item--collapsed .nav-item__content {
+  padding: var(--spacing-md) var(--spacing-xxs);
+  justify-content: center;
+}
+
+.nav-item--collapsed .nav-item__text-group {
+  justify-content: center;
+}
+
+.nav-item--collapsed .nav-item__label,
+.nav-item--collapsed .nav-item__count,
+.nav-item--collapsed .nav-item__badge,
+.nav-item--collapsed .nav-item__chevron {
+  display: none;
+}

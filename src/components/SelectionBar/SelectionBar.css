@@ -1,0 +1,98 @@
+/* ============================================================
+   SelectionBar Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.selection-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-xl) var(--spacing-md) var(--spacing-md);
+  background-color: var(--color-brand-50);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-family-body);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* ---------- left group: close + count ---------- */
+.selection-bar__left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* ---------- close button ---------- */
+.selection-bar__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: var(--spacing-sm);
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--fg-primary);
+  border-radius: var(--radius-xxs);
+  flex-shrink: 0;
+}
+
+.selection-bar__close:hover {
+  background-color: var(--color-brand-100);
+}
+
+.selection-bar__close:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.selection-bar__close svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- count text ---------- */
+.selection-bar__count {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--fg-primary);
+  white-space: nowrap;
+}
+
+/* ---------- actions row ---------- */
+.selection-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* ---------- individual action link ---------- */
+.selection-bar__action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-brand-secondary);
+  border-radius: var(--radius-xxs);
+  white-space: nowrap;
+}
+
+.selection-bar__action:hover {
+  color: var(--text-brand-secondary-hover);
+}
+
+.selection-bar__action:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}

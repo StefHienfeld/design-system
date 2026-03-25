@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Storybook build
+storybook-static/
+
+# Environment
+.env
+.env.*
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Playwright MCP logs
+.playwright-mcp/
+
+# Screenshots (dev artifacts)
+*.png
+
+# Design source files (logos, icons, fonts — reference only)
+design/

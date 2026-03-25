@@ -1,0 +1,92 @@
+/* ============================================================
+   Slider (Range) Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- root container ---------- */
+.slider {
+  position: relative;
+  width: 320px;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ---------- track ---------- */
+.slider__track {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: var(--bg-quaternary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+}
+
+/* ---------- filled range between handles ---------- */
+.slider__range {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: var(--fg-brand-primary);
+  border-radius: var(--radius-full);
+}
+
+/* ---------- handle (thumb) ---------- */
+.slider__handle {
+  position: absolute;
+  top: -8px; /* vertically center 24px handle on 8px track */
+  width: 24px;
+  height: 24px;
+  background: var(--slider-handle-bg);
+  border: 2px solid var(--slider-handle-border);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+  cursor: grab;
+  transform: translateX(-50%);
+  outline: none;
+  z-index: 1;
+}
+
+.slider__handle:focus-visible {
+  box-shadow: var(--focus-ring-shadow), var(--shadow-md);
+}
+
+.slider__handle--active {
+  cursor: grabbing;
+  z-index: 2;
+}
+
+/* ---------- label: bottom ---------- */
+.slider__label-bottom {
+  position: absolute;
+  top: 42.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  pointer-events: none;
+}
+
+/* ---------- label: top-floating (tooltip style) ---------- */
+.slider__label-floating {
+  position: absolute;
+  top: -43.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: var(--bg-primary-alt);
+  border: 1px solid var(--border-secondary-alt);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  pointer-events: none;
+}

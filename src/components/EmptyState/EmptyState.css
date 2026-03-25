@@ -1,0 +1,180 @@
+/* ============================================================
+   EmptyState Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-state__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 0 0;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* ---------- content (icon + text) ---------- */
+.empty-state__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* ---------- icon wrapper (featured icon) ---------- */
+.empty-state__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+/* ---------- text group ---------- */
+.empty-state__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 352px;
+  width: 100%;
+}
+
+/* ---------- title ---------- */
+.empty-state__title {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  width: 100%;
+}
+
+/* ---------- description ---------- */
+.empty-state__description {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+  width: 100%;
+}
+
+/* ---------- actions ---------- */
+.empty-state__actions {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   SIZE — SM
+   ============================================================ */
+.empty-state--sm .empty-state__inner {
+  gap: var(--spacing-3xl);
+}
+
+.empty-state--sm .empty-state__content {
+  gap: var(--spacing-xl);
+}
+
+.empty-state--sm .empty-state__icon {
+  width: 48px;
+  height: 48px;
+}
+
+.empty-state--sm .empty-state__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.empty-state--sm .empty-state__text {
+  gap: var(--spacing-xs);
+}
+
+.empty-state--sm .empty-state__title {
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+}
+
+.empty-state--sm .empty-state__description {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+}
+
+/* ============================================================
+   SIZE — MD
+   ============================================================ */
+.empty-state--md .empty-state__inner {
+  gap: var(--spacing-4xl);
+}
+
+.empty-state--md .empty-state__content {
+  gap: var(--spacing-2xl);
+}
+
+.empty-state--md .empty-state__icon {
+  width: 48px;
+  height: 48px;
+}
+
+.empty-state--md .empty-state__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.empty-state--md .empty-state__text {
+  gap: var(--spacing-md);
+}
+
+.empty-state--md .empty-state__title {
+  font-size: var(--font-size-text-lg);
+  line-height: var(--line-height-text-lg);
+}
+
+.empty-state--md .empty-state__description {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+}
+
+/* ============================================================
+   SIZE — LG
+   ============================================================ */
+.empty-state--lg .empty-state__inner {
+  gap: var(--spacing-4xl);
+}
+
+.empty-state--lg .empty-state__content {
+  gap: var(--spacing-2xl);
+}
+
+.empty-state--lg .empty-state__icon {
+  width: 56px;
+  height: 56px;
+}
+
+.empty-state--lg .empty-state__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.empty-state--lg .empty-state__text {
+  gap: var(--spacing-md);
+}
+
+.empty-state--lg .empty-state__title {
+  font-size: var(--font-size-text-xl);
+  line-height: var(--line-height-text-xl);
+}
+
+.empty-state--lg .empty-state__description {
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+}

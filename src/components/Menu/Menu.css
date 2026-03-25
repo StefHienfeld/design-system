@@ -1,0 +1,164 @@
+/* ============================================================
+   Menu Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- container ---------- */
+.menu {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-secondary-alt);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  width: 248px;
+}
+
+/* ---------- menu item ---------- */
+.menu-item {
+  padding: 1px var(--spacing-sm);
+}
+
+.menu-item__content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--spacing-md) 10px;
+  border-radius: var(--radius-xxs);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  text-align: left;
+  box-sizing: border-box;
+  transition: background-color 120ms ease;
+}
+
+.menu-item__content:hover {
+  background-color: var(--bg-active);
+}
+
+.menu-item__content:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.menu-item__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--fg-quaternary);
+  margin-right: var(--spacing-md);
+}
+
+.menu-item__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.menu-item__label {
+  flex: 1;
+  min-width: 0;
+}
+
+.menu-item__shortcut {
+  flex-shrink: 0;
+  margin-left: var(--spacing-md);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-xs);
+  padding: 1px var(--spacing-xs);
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-quaternary);
+}
+
+/* ---------- divider ---------- */
+.menu-divider {
+  padding: var(--spacing-xs) 0;
+}
+
+.menu-divider__line {
+  height: 1px;
+  background: var(--border-secondary);
+}
+
+/* ---------- header ---------- */
+.menu-header {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-secondary);
+  gap: var(--spacing-md);
+}
+
+.menu-header__avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.menu-header__avatar {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+}
+
+/* Fallback when no avatar image is provided */
+.menu-header__avatar-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--bg-tertiary);
+  color: var(--text-quaternary);
+  font-size: var(--font-size-text-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.menu-header__online-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: var(--fg-success-secondary);
+  border: 1.5px solid #ffffff;
+  box-sizing: border-box;
+}
+
+.menu-header__text {
+  min-width: 0;
+}
+
+.menu-header__name {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-header__email {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

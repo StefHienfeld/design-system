@@ -1,0 +1,316 @@
+/* ============================================================
+   Alert Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.alert {
+  position: relative;
+  display: flex;
+  font-family: var(--font-family-body);
+  box-sizing: border-box;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  background-color: var(--bg-primary-alt);
+}
+
+/* ============================================================
+   SIZE — FLOATING (card-style)
+   ============================================================ */
+.alert--floating {
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  box-shadow: none;
+}
+
+/* ============================================================
+   SIZE — FULL-WIDTH (banner-style)
+   ============================================================ */
+.alert--full-width {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
+  background-color: var(--bg-primary);
+  width: 100%;
+}
+
+.alert--full-width .alert__container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-4xl);
+}
+
+/* ============================================================
+   ICON
+   ============================================================ */
+.alert__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-tertiary);
+}
+
+.alert__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Default color: icon uses the boxed style (border + shadow) */
+.alert--default .alert__icon {
+  border-radius: var(--radius-xxs);
+  border: 1px solid var(--border-primary);
+  box-shadow: none;
+  background-color: var(--bg-primary);
+}
+
+/* Full-width non-default: icon uses outlined ring style */
+.alert--full-width:not(.alert--default) .alert__icon {
+  position: relative;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+}
+
+.alert--full-width:not(.alert--default) .alert__icon::before,
+.alert--full-width:not(.alert--default) .alert__icon::after {
+  content: '';
+  position: absolute;
+  border-radius: var(--spacing-3xl);
+  border: 2px solid currentColor;
+}
+
+.alert--full-width:not(.alert--default) .alert__icon::before {
+  inset: -20%;
+  opacity: 0.3;
+}
+
+.alert--full-width:not(.alert--default) .alert__icon::after {
+  inset: -45%;
+  opacity: 0.1;
+}
+
+.alert--full-width:not(.alert--default) .alert__icon svg {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+.alert__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  flex: 1;
+  min-width: 0;
+}
+
+.alert--full-width .alert__content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ---------- text group ---------- */
+.alert__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* In full-width desktop, title and description wrap inline */
+.alert--full-width .alert__text {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  align-items: baseline;
+}
+
+/* ---------- title ---------- */
+.alert__title {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  margin: 0;
+  padding-right: var(--spacing-4xl);
+}
+
+/* ---------- description ---------- */
+.alert__description {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+/* ============================================================
+   ACTIONS
+   ============================================================ */
+.alert__actions {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Full-width default/brand/gray: use button-style actions */
+.alert--full-width.alert--default .alert__actions,
+.alert--full-width.alert--brand .alert__actions,
+.alert--full-width.alert--gray .alert__actions {
+  gap: var(--spacing-lg);
+}
+
+/* ============================================================
+   ACTION LINKS (text-style buttons inside actions)
+   ============================================================ */
+.alert__action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-xxs);
+}
+
+.alert__action-link--secondary {
+  color: var(--text-tertiary);
+}
+
+.alert__action-link--primary {
+  color: var(--text-brand-secondary);
+}
+
+.alert__action-link--secondary:hover {
+  color: var(--text-tertiary-hover);
+}
+
+.alert__action-link--primary:hover {
+  color: var(--text-brand-secondary-hover);
+}
+
+/* ============================================================
+   CLOSE BUTTON
+   ============================================================ */
+.alert__close {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: var(--spacing-md);
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--fg-quaternary);
+  border-radius: var(--radius-xxs);
+  flex-shrink: 0;
+}
+
+.alert__close:hover {
+  color: var(--fg-quaternary-hover);
+  background-color: var(--bg-primary-hover);
+}
+
+.alert__close svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Full-width: close button positioned differently */
+.alert--full-width .alert__close {
+  position: relative;
+  top: auto;
+  right: auto;
+}
+
+/* ============================================================
+   COLOR — DEFAULT
+   ============================================================ */
+.alert--default {
+  /* Uses base styles — white bg, border, boxed icon */
+}
+
+.alert--default .alert__icon {
+  color: var(--fg-secondary);
+}
+
+/* ============================================================
+   COLOR — BRAND
+   ============================================================ */
+.alert--floating.alert--brand .alert__icon {
+  background-color: var(--bg-tertiary);
+  color: var(--fg-brand-primary);
+}
+
+.alert--full-width.alert--brand .alert__icon {
+  color: var(--fg-brand-primary);
+}
+
+/* ============================================================
+   COLOR — GRAY
+   ============================================================ */
+.alert--floating.alert--gray .alert__icon {
+  background-color: var(--bg-tertiary);
+  color: var(--text-tertiary);
+}
+
+.alert--full-width.alert--gray .alert__icon {
+  color: var(--text-tertiary);
+}
+
+/* ============================================================
+   COLOR — ERROR
+   ============================================================ */
+.alert--floating.alert--error .alert__icon {
+  background-color: var(--color-error-100);
+  color: var(--color-error-600);
+}
+
+.alert--full-width.alert--error .alert__icon {
+  color: var(--color-error-600);
+}
+
+/* ============================================================
+   COLOR — WARNING
+   ============================================================ */
+.alert--floating.alert--warning .alert__icon {
+  background-color: var(--color-error-100);
+  color: var(--color-warning-600);
+}
+
+.alert--full-width.alert--warning .alert__icon {
+  color: var(--color-warning-600);
+}
+
+/* ============================================================
+   COLOR — SUCCESS
+   ============================================================ */
+.alert--floating.alert--success .alert__icon {
+  background-color: var(--color-success-100);
+  color: var(--color-success-600);
+}
+
+.alert--full-width.alert--success .alert__icon {
+  color: var(--color-success-600);
+}

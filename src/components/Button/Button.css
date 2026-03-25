@@ -1,0 +1,251 @@
+/* ============================================================
+   Button Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    box-shadow 120ms ease,
+    border-color 120ms ease;
+  border-radius: var(--radius-xxs);
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* text wrapper — adds 2px horizontal padding inside */
+.button__text {
+  padding: 0 var(--spacing-xxs);
+}
+
+/* icon slots */
+.button__icon-leading,
+.button__icon-trailing {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.button__icon-leading svg,
+.button__icon-trailing svg,
+.button__spinner svg {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+/* ============================================================
+   SIZES
+   ============================================================ */
+
+/* --- sm: 36px height --- */
+.button--sm {
+  height: 36px;
+  padding: 8px 12px;
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  gap: var(--spacing-xs);
+}
+
+/* --- md: 40px height --- */
+.button--md {
+  height: 40px;
+  padding: 10px 14px;
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  gap: var(--spacing-xs);
+}
+
+/* --- lg: 44px height --- */
+.button--lg {
+  height: 44px;
+  padding: 10px 16px;
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  gap: var(--spacing-sm);
+}
+
+/* --- xl: 48px height --- */
+.button--xl {
+  height: 48px;
+  padding: 12px 18px;
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  gap: var(--spacing-sm);
+}
+
+/* ============================================================
+   ICON-ONLY (square buttons — width = height)
+   ============================================================ */
+.button--icon-only {
+  padding: 0;
+}
+
+.button--icon-only.button--sm {
+  width: 36px;
+}
+
+.button--icon-only.button--md {
+  width: 40px;
+}
+
+.button--icon-only.button--lg {
+  width: 44px;
+}
+
+.button--icon-only.button--xl {
+  width: 48px;
+}
+
+/* ============================================================
+   HIERARCHY — PRIMARY
+   ============================================================ */
+.button--primary {
+  background: var(--gradient-button-primary);
+  background-size: var(--gradient-button-size);
+  background-position: 100% 100%;
+  color: var(--text-white);
+  box-shadow: none;
+  transition: var(--transition-button);
+}
+
+.button--primary:hover {
+  background-position: 0 100%;
+}
+
+.button--primary:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* ============================================================
+   HIERARCHY — SECONDARY
+   ============================================================ */
+.button--secondary {
+  background: var(--gradient-button-outline);
+  background-size: var(--gradient-button-size);
+  background-position: 100% 100%;
+  color: var(--color-brand-600);
+  border: 1px solid var(--color-brand-600);
+  box-shadow: none;
+  transition: var(--transition-button);
+}
+
+.button--secondary:hover {
+  background-position: 0 100%;
+  color: var(--text-white);
+}
+
+.button--secondary:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* ============================================================
+   HIERARCHY — TERTIARY
+   ============================================================ */
+.button--tertiary {
+  background-color: transparent;
+  color: var(--text-tertiary);
+  box-shadow: none;
+}
+
+.button--tertiary:hover {
+  background-color: var(--bg-primary-hover);
+  color: var(--text-tertiary-hover);
+}
+
+.button--tertiary:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* ============================================================
+   HIERARCHY — LINK COLOR
+   ============================================================ */
+.button--link-color {
+  background-color: transparent;
+  color: var(--text-brand-secondary);
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  height: auto;
+}
+
+.button--link-color:hover {
+  color: var(--text-brand-secondary-hover);
+}
+
+.button--link-color:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* ============================================================
+   HIERARCHY — LINK GRAY
+   ============================================================ */
+.button--link-gray {
+  background-color: transparent;
+  color: var(--text-tertiary);
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  height: auto;
+}
+
+.button--link-gray:hover {
+  color: var(--text-tertiary-hover);
+}
+
+.button--link-gray:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* ============================================================
+   DISABLED STATE (all hierarchies)
+   ============================================================ */
+.button:disabled,
+.button:disabled:hover {
+  background: var(--bg-disabled);
+  border: 1px solid var(--border-disabled-subtle);
+  color: var(--fg-disabled);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   LOADING STATE
+   ============================================================ */
+.button--loading {
+  pointer-events: none;
+}
+
+/* spinner */
+.button__spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  animation: button-spin 700ms linear infinite;
+}
+
+@keyframes button-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

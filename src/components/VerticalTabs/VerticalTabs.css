@@ -1,0 +1,208 @@
+/* ============================================================
+   VerticalTabs Component Styles — Hienfeld Design System
+   ============================================================ */
+
+/* ---------- container ---------- */
+.vertical-tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ---------- size modifiers on container ---------- */
+.vertical-tabs--sm {
+  gap: var(--spacing-xs);
+}
+
+.vertical-tabs--md {
+  gap: var(--spacing-xs);
+}
+
+/* ---------- line type has larger gap ---------- */
+.vertical-tabs--line.vertical-tabs--sm,
+.vertical-tabs--line.vertical-tabs--md {
+  gap: var(--spacing-md);
+}
+
+/* ---------- button-border wrapper ---------- */
+.vertical-tabs--button-border {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-xxs);
+}
+
+.vertical-tabs--button-border.vertical-tabs--sm {
+  padding: var(--spacing-xs);
+}
+
+.vertical-tabs--button-border.vertical-tabs--md {
+  padding: var(--spacing-sm);
+}
+
+/* ---------- button-minimal wrapper ---------- */
+.vertical-tabs--button-minimal {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-xxs);
+  gap: var(--spacing-xxs);
+}
+
+/* ---------- individual tab button ---------- */
+.vertical-tabs__tab {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-xxs);
+  background: transparent;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-quaternary);
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: left;
+  transition:
+    color 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+/* ---------- size: sm ---------- */
+.vertical-tabs--sm .vertical-tabs__tab {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  min-height: 36px;
+}
+
+/* ---------- size: md ---------- */
+.vertical-tabs--md .vertical-tabs__tab {
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  min-height: 44px;
+}
+
+/* ---------- line type tab sizing ---------- */
+.vertical-tabs--line.vertical-tabs--sm .vertical-tabs__tab {
+  padding: var(--spacing-xxs) var(--spacing-lg);
+  min-height: 24px;
+}
+
+.vertical-tabs--line.vertical-tabs--md .vertical-tabs__tab {
+  padding: var(--spacing-xs) 14px;
+  min-height: 32px;
+}
+
+/* ---------- hover (all types) ---------- */
+.vertical-tabs__tab:hover:not(.vertical-tabs__tab--active):not(.vertical-tabs__tab--disabled) {
+  color: var(--text-secondary-hover);
+}
+
+/* ---------- focus ---------- */
+.vertical-tabs__tab:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+  border-radius: var(--radius-xxs);
+}
+
+/* ---------- disabled ---------- */
+.vertical-tabs__tab--disabled {
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+
+.vertical-tabs__tab--disabled:hover {
+  color: var(--text-disabled);
+}
+
+/* ============================================================
+   Active states per type
+   ============================================================ */
+
+/* ---------- button-primary active ---------- */
+.vertical-tabs--button-primary .vertical-tabs__tab--active {
+  background: var(--color-brand-50);
+  color: var(--text-brand-secondary);
+}
+
+/* ---------- button-gray active ---------- */
+.vertical-tabs--button-gray .vertical-tabs__tab--active {
+  background: var(--bg-active);
+  color: var(--text-secondary);
+}
+
+/* ---------- line active ---------- */
+.vertical-tabs--line .vertical-tabs__tab--active {
+  border-left: 2px solid var(--fg-brand-primary);
+  color: var(--text-brand-secondary);
+}
+
+/* Compensate for the 2px left border on line active to keep text aligned */
+.vertical-tabs--line .vertical-tabs__tab {
+  border-left: 2px solid transparent;
+}
+
+/* ---------- button-border active ---------- */
+.vertical-tabs--button-border .vertical-tabs__tab--active {
+  background: var(--bg-primary-alt);
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- button-minimal active ---------- */
+.vertical-tabs--button-minimal .vertical-tabs__tab--active {
+  background: var(--bg-primary-alt);
+  border: 1px solid var(--border-primary);
+  color: var(--text-secondary);
+  box-shadow: none;
+}
+
+/* ---------- icon ---------- */
+.vertical-tabs__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.vertical-tabs__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.vertical-tabs--md .vertical-tabs__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- label ---------- */
+.vertical-tabs__label {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---------- count badge ---------- */
+.vertical-tabs__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: var(--spacing-xxs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-700);
+}
+
+.vertical-tabs--md .vertical-tabs__count {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  padding: var(--spacing-xxs) 10px;
+}

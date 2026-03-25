@@ -1,0 +1,364 @@
+/* ============================================================
+   CommandBar Component Styles — Hienfeld Design System
+   ============================================================ */
+
+/* ---------- overlay ---------- */
+.command-bar__overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 160px;
+  padding-left: var(--spacing-4xl);
+  padding-right: var(--spacing-4xl);
+  padding-bottom: var(--spacing-4xl);
+  z-index: 1100;
+}
+
+.command-bar__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 13, 18, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+/* ---------- dialog ---------- */
+.command-bar__dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 640px;
+  max-height: 480px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+/* ---------- search input area ---------- */
+.command-bar__search {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-secondary);
+  border-radius: var(--radius-xxs) var(--radius-xxs) 0 0;
+  flex-shrink: 0;
+}
+
+.command-bar__search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--fg-quaternary);
+}
+
+.command-bar__search-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.command-bar__input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-primary);
+}
+
+.command-bar__input::placeholder {
+  color: var(--text-placeholder);
+}
+
+.command-bar__shortcut {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.command-bar__shortcut-key {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--spacing-xxs) var(--spacing-xs);
+  background: var(--color-gray-50);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-tertiary);
+}
+
+/* ---------- results area ---------- */
+.command-bar__results {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--spacing-md) 0;
+}
+
+/* custom scrollbar */
+.command-bar__results::-webkit-scrollbar {
+  width: 12px;
+}
+
+.command-bar__results::-webkit-scrollbar-track {
+  background: transparent;
+  margin: var(--spacing-md) var(--spacing-sm);
+}
+
+.command-bar__results::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-full);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+/* ---------- result item ---------- */
+.command-bar__item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xxs) var(--spacing-md);
+  cursor: pointer;
+}
+
+.command-bar__item-content {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 10px;
+  border-radius: var(--radius-xxs);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.command-bar__item--active .command-bar__item-content,
+.command-bar__item:hover .command-bar__item-content {
+  background: var(--bg-primary-hover);
+}
+
+.command-bar__item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  color: var(--fg-quaternary);
+}
+
+.command-bar__item-icon svg {
+  width: 10px;
+  height: 10px;
+}
+
+.command-bar__item-text {
+  display: flex;
+  flex: 1;
+  align-items: baseline;
+  gap: var(--spacing-md);
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.command-bar__item-label {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.command-bar__item-description {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+/* ---------- empty state ---------- */
+.command-bar__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-5xl);
+  gap: var(--spacing-md);
+}
+
+.command-bar__empty-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  width: 100%;
+  max-width: 352px;
+}
+
+.command-bar__empty-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+  width: 100%;
+}
+
+.command-bar__empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  box-shadow: none;
+  background: var(--bg-primary);
+  color: var(--fg-secondary);
+  flex-shrink: 0;
+}
+
+.command-bar__empty-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.command-bar__empty-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  text-align: center;
+  width: 100%;
+}
+
+.command-bar__empty-title {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.command-bar__empty-message {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+}
+
+.command-bar__empty-actions {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.command-bar__clear-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  background: var(--bg-primary);
+  box-shadow: none;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background-color 120ms ease;
+}
+
+.command-bar__clear-button:hover {
+  background: var(--bg-primary-hover);
+}
+
+.command-bar__clear-button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* ---------- footer ---------- */
+.command-bar__footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  height: 44px;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 18px;
+  border-top: 1px solid var(--border-secondary-alt);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  flex-shrink: 0;
+}
+
+.command-bar__footer-hints {
+  display: flex;
+  flex: 1;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.command-bar__footer-hint {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+.command-bar__footer-hint-icons {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.command-bar__footer-key {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--spacing-sm);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+  color: var(--fg-quaternary);
+  flex-shrink: 0;
+}
+
+.command-bar__footer-key svg {
+  width: 16px;
+  height: 16px;
+}
+
+.command-bar__footer-key--text {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--fg-quaternary);
+}
+
+.command-bar__footer-label {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-quaternary);
+  white-space: nowrap;
+}

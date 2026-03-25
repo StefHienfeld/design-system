@@ -1,0 +1,126 @@
+/* ============================================================
+   LoadingIndicator Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.loading-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- spinner ---------- */
+.loading-indicator__spinner {
+  flex-shrink: 0;
+  animation: loading-indicator-spin 1s linear infinite;
+}
+
+@keyframes loading-indicator-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Spinner track (background circle) */
+.loading-indicator__track {
+  stroke: var(--color-brand-100);
+  fill: none;
+}
+
+/* Spinner arc (active indicator) */
+.loading-indicator__arc {
+  stroke: var(--color-brand-600);
+  fill: none;
+  stroke-linecap: round;
+}
+
+/* ---------- label ---------- */
+.loading-indicator__label {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ---------- visually hidden (screen-reader only) ---------- */
+.loading-indicator__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================================
+   SIZES
+   ============================================================ */
+
+/* --- sm: 32px spinner --- */
+.loading-indicator--sm {
+  gap: var(--spacing-xl);
+}
+
+.loading-indicator--sm .loading-indicator__spinner {
+  width: 32px;
+  height: 32px;
+}
+
+.loading-indicator--sm .loading-indicator__label {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+}
+
+/* --- md: 48px spinner --- */
+.loading-indicator--md {
+  gap: var(--spacing-xl);
+}
+
+.loading-indicator--md .loading-indicator__spinner {
+  width: 48px;
+  height: 48px;
+}
+
+.loading-indicator--md .loading-indicator__label {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+}
+
+/* --- lg: 56px spinner --- */
+.loading-indicator--lg {
+  gap: var(--spacing-xl);
+}
+
+.loading-indicator--lg .loading-indicator__spinner {
+  width: 56px;
+  height: 56px;
+}
+
+.loading-indicator--lg .loading-indicator__label {
+  font-size: var(--font-size-text-lg);
+  line-height: var(--line-height-text-lg);
+}
+
+/* --- xl: 64px spinner --- */
+.loading-indicator--xl {
+  gap: var(--spacing-2xl);
+}
+
+.loading-indicator--xl .loading-indicator__spinner {
+  width: 64px;
+  height: 64px;
+}
+
+.loading-indicator--xl .loading-indicator__label {
+  font-size: var(--font-size-text-lg);
+  line-height: var(--line-height-text-lg);
+}

@@ -1,0 +1,101 @@
+/* ============================================================
+   ContentDivider Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.content-divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-family-body);
+}
+
+/* ---------- divider line (used in single-line) ---------- */
+.content-divider__line {
+  flex: 1 0 0;
+  height: 1px;
+  min-height: 1px;
+  background-color: var(--border-secondary);
+}
+
+/* ---------- label ---------- */
+.content-divider__label {
+  flex-shrink: 0;
+  text-align: center;
+  white-space: nowrap;
+  font-family: var(--font-family-body);
+}
+
+/* heading variant (default) */
+.content-divider__label--heading {
+  font-size: var(--font-size-text-lg);
+  line-height: var(--line-height-text-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+/* text (supporting text) variant */
+.content-divider__label--text {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-tertiary);
+}
+
+/* ---------- actions ---------- */
+.content-divider__actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ---------- content row (label + actions side by side) ---------- */
+.content-divider__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.content-divider__content--with-actions {
+  justify-content: space-between;
+}
+
+/* ============================================================
+   STYLE — SINGLE LINE
+   ============================================================ */
+.content-divider--single-line {
+  gap: var(--spacing-md);
+}
+
+/* ============================================================
+   STYLE — DUAL LINE
+   ============================================================ */
+.content-divider--dual-line {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--spacing-md);
+  border-top: 4px solid var(--color-brand-600);
+  padding: var(--spacing-lg) 0;
+}
+
+.content-divider--dual-line .content-divider__label--heading {
+  color: var(--text-brand-secondary);
+}
+
+.content-divider--dual-line .content-divider__label--text {
+  color: var(--text-brand-secondary);
+}
+
+/* ============================================================
+   STYLE — BACKGROUND FILL
+   ============================================================ */
+.content-divider--background-fill {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--spacing-md);
+  background-color: var(--color-brand-50);
+  padding: var(--spacing-md) 0;
+}

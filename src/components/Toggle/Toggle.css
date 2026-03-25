@@ -1,0 +1,174 @@
+/* ============================================================
+   Toggle Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- wrapper (label layout) ---------- */
+.toggle-wrapper {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+}
+
+/* ---------- track (the button itself) ---------- */
+.toggle__track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  border: 1px solid var(--toggle-border);
+  border-radius: var(--radius-full);
+  background-color: var(--bg-tertiary);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.toggle__track:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* --- size: sm (36 x 20) --- */
+.toggle__track--sm {
+  width: 36px;
+  height: 20px;
+}
+
+/* --- size: md (44 x 24) --- */
+.toggle__track--md {
+  width: 44px;
+  height: 24px;
+}
+
+/* ---------- thumb (circle) ---------- */
+.toggle__thumb {
+  position: absolute;
+  border-radius: var(--radius-full);
+  background-color: #ffffff;
+  box-shadow: var(--shadow-sm);
+  transition: transform 200ms ease;
+}
+
+/* sm thumb: 16px, offset 2px from left */
+.toggle__track--sm .toggle__thumb {
+  width: 16px;
+  height: 16px;
+  left: 2px;
+  top: 1px;
+}
+
+/* md thumb: 20px, offset 2px from left */
+.toggle__track--md .toggle__thumb {
+  width: 20px;
+  height: 20px;
+  left: 2px;
+  top: 1px;
+}
+
+/* ---------- checked state ---------- */
+.toggle__track--checked {
+  background-color: var(--bg-brand-solid);
+  border-color: var(--toggle-border-pressed);
+}
+
+.toggle__track--checked:hover {
+  background-color: var(--bg-brand-solid-hover);
+  border-color: var(--toggle-border-pressed-hover);
+}
+
+/* sm checked: slide thumb to right end
+   inner width = 36 - 2 (border) = 34px
+   travel = 34 - 16 (thumb) - 2 (left gap) - 2 (right gap) = 14px */
+.toggle__track--sm.toggle__track--checked .toggle__thumb {
+  transform: translateX(14px);
+}
+
+/* md checked: slide thumb to right end
+   inner width = 44 - 2 (border) = 42px
+   travel = 42 - 20 (thumb) - 2 (left gap) - 2 (right gap) = 18px */
+.toggle__track--md.toggle__track--checked .toggle__thumb {
+  transform: translateX(18px);
+}
+
+/* ---------- slim variant ---------- */
+.toggle__track--slim.toggle__track--sm {
+  width: 32px;
+  height: 16px;
+}
+.toggle__track--slim.toggle__track--md {
+  width: 40px;
+  height: 20px;
+}
+.toggle__track--slim .toggle__thumb {
+  border: 1.5px solid var(--toggle-border);
+}
+.toggle__track--slim.toggle__track--sm .toggle__thumb {
+  width: 12px;
+  height: 12px;
+  left: 1px;
+  top: 1px;
+}
+.toggle__track--slim.toggle__track--md .toggle__thumb {
+  width: 16px;
+  height: 16px;
+  left: 1px;
+  top: 1px;
+}
+.toggle__track--slim.toggle__track--sm.toggle__track--checked .toggle__thumb {
+  transform: translateX(14px);
+}
+.toggle__track--slim.toggle__track--md.toggle__track--checked .toggle__thumb {
+  transform: translateX(18px);
+}
+.toggle__track--slim.toggle__track--checked .toggle__thumb {
+  border-color: transparent;
+}
+
+/* ---------- disabled state ---------- */
+.toggle__track--disabled {
+  background-color: var(--bg-disabled);
+  border-color: var(--border-disabled-subtle);
+  cursor: not-allowed;
+}
+
+.toggle__track--disabled:hover {
+  background-color: var(--bg-disabled);
+  border-color: var(--border-disabled-subtle);
+}
+
+.toggle__track--disabled .toggle__thumb {
+  background-color: var(--toggle-button-fg-disabled);
+  box-shadow: none;
+}
+
+/* disabled + checked still shows disabled colors */
+.toggle__track--disabled.toggle__track--checked {
+  background-color: var(--bg-disabled);
+  border-color: var(--border-disabled-subtle);
+}
+
+/* ---------- text block ---------- */
+.toggle__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle__label {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+}
+
+.toggle__description {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+}

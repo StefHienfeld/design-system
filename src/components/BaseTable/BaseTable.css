@@ -1,0 +1,81 @@
+/* ============================================================
+   BaseTable Component Styles — Hienfeld Design System
+   Composed table layout: tabs + filter bar + content + pagination.
+   ============================================================ */
+
+/* ---------- root container ---------- */
+.base-table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  align-items: stretch;
+  position: relative;
+  isolation: isolate;
+  font-family: var(--font-family-body);
+}
+
+/* ---------- tabs slot ---------- */
+.base-table__tabs {
+  flex-shrink: 0;
+  z-index: 3;
+}
+
+/* ---------- filters slot ---------- */
+.base-table__filters {
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+/* ---------- selection bar slot ---------- */
+.base-table__selection {
+  position: absolute;
+  top: 52px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+
+/* ---------- content wrapper (table + pagination) ---------- */
+.base-table__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1 0 0;
+  min-height: 0;
+  min-width: 0;
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  isolation: isolate;
+  z-index: 1;
+}
+
+/* ---------- main content area (table body or empty state) ---------- */
+.base-table__content {
+  flex: 1 0 0;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  background: var(--bg-primary);
+  z-index: 2;
+}
+
+/* Remove the Table component's own border + radius when inside BaseTable,
+   since the content-wrapper provides those. */
+.base-table__content > .table {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* ---------- pagination slot ---------- */
+.base-table__pagination {
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+/* Remove the Pagination component's own top border when inside BaseTable,
+   since the content-wrapper already provides visual separation. */
+.base-table__pagination > .pagination {
+  border-top: 1px solid var(--border-secondary);
+}

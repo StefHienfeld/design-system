@@ -1,0 +1,112 @@
+/* ============================================================
+   Chart Component Styles — Hienfeld Design System
+   Layout wrapper for line/bar charts. Provides chrome (title,
+   legend, axis labels) around a chart content slot.
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.chart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  font-family: var(--font-family-body);
+}
+
+/* ---------- title ---------- */
+.chart__title {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-xl) 0;
+}
+
+/* ---------- body: wraps content + optional right legend ---------- */
+.chart__body {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* ---------- content: wraps legend-top + chart area + x-axis ---------- */
+.chart__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  min-width: 0;
+  min-height: 1px;
+  height: 100%;
+  align-items: flex-end;
+}
+
+/* ---------- chart area wrapper ---------- */
+.chart__area {
+  position: relative;
+  width: 100%;
+  flex: 1 1 0%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* ---------- legend ---------- */
+.chart__legend {
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* Legend at top: horizontal row, right-aligned */
+.chart__legend--top {
+  flex-direction: row;
+  gap: var(--spacing-lg);
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Legend at bottom: horizontal row, centered */
+.chart__legend--bottom {
+  flex-direction: row;
+  gap: var(--spacing-lg);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: var(--spacing-md);
+}
+
+/* Legend at right: vertical column beside chart */
+.chart__legend--right {
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  align-items: flex-start;
+}
+
+/* ---------- legend item ---------- */
+.chart__legend-item {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Legend color dot */
+.chart__legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* Legend label text */
+.chart__legend-label {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}

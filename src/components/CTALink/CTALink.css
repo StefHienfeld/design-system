@@ -1,0 +1,53 @@
+/* ============================================================
+   CTALink Component Styles — Hienfeld Design System
+   The signature hienfeld.nl call-to-action link pattern.
+   ============================================================ */
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-decoration: none;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-text-lg);
+  color: var(--color-link-black);
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.cta-link__text {
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--color-link-black);
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-link:hover .cta-link__text {
+  border-bottom-color: var(--color-brand-600);
+  color: var(--color-brand-600);
+}
+
+.cta-link:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.cta-link__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.cta-link:hover .cta-link__icon {
+  color: var(--color-brand-600);
+}
+
+.cta-link__icon svg {
+  width: 20px;
+  height: 20px;
+}

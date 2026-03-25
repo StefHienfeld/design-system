@@ -1,0 +1,95 @@
+/* ============================================================
+   Header Component Styles — Hienfeld Design System
+   Top navigation bar with back button, centered title,
+   and action buttons. Sourced from Figma node 15182:23638.
+   ============================================================ */
+
+/* ---------- root container ---------- */
+.header {
+  font-family: var(--font-family-body);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-secondary);
+  box-shadow: none;
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  box-sizing: border-box;
+  position: relative;
+  min-height: 72px;
+}
+
+/* ---------- left section (back button + logo) ---------- */
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+/* ---------- back button ---------- */
+.header__back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  background: var(--bg-primary);
+  color: var(--fg-secondary);
+  cursor: pointer;
+  box-shadow: none;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.header__back-btn:hover {
+  background: var(--bg-primary-hover);
+  color: var(--fg-primary);
+}
+
+.header__back-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.header__back-btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ---------- centered title ---------- */
+.header__title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-text-xl);
+  line-height: var(--line-height-text-xl);
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60%;
+  text-align: center;
+  margin: 0;
+  pointer-events: none;
+}
+
+/* ---------- right section (action buttons) ---------- */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex-shrink: 0;
+  z-index: 1;
+}

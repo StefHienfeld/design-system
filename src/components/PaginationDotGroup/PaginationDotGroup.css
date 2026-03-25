@@ -1,0 +1,118 @@
+/* ============================================================
+   PaginationDotGroup Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base container ---------- */
+.pagination-dots {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* ---------- framed variant ---------- */
+.pagination-dots--framed {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
+}
+
+/* ============================================================
+   SIZE + STYLE — gap & padding combinations
+   ============================================================ */
+
+/* --- md / dot --- */
+.pagination-dots--md.pagination-dots--dot {
+  gap: var(--spacing-lg);
+}
+
+.pagination-dots--md.pagination-dots--dot.pagination-dots--framed {
+  padding: var(--spacing-md);
+}
+
+/* --- md / line --- */
+.pagination-dots--md.pagination-dots--line {
+  gap: var(--spacing-md);
+}
+
+.pagination-dots--md.pagination-dots--line.pagination-dots--framed {
+  padding: var(--spacing-md);
+}
+
+/* --- lg / dot --- */
+.pagination-dots--lg.pagination-dots--dot {
+  gap: var(--spacing-xl);
+}
+
+.pagination-dots--lg.pagination-dots--dot.pagination-dots--framed {
+  padding: var(--spacing-lg);
+}
+
+/* --- lg / line --- */
+.pagination-dots--lg.pagination-dots--line {
+  gap: var(--spacing-lg);
+}
+
+.pagination-dots--lg.pagination-dots--line.pagination-dots--framed {
+  padding: var(--spacing-lg);
+}
+
+/* ============================================================
+   INDIVIDUAL DOT / LINE INDICATOR
+   ============================================================ */
+
+.pagination-dots__dot {
+  border-radius: var(--radius-full);
+  background: var(--bg-quaternary);
+  flex-shrink: 0;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.pagination-dots__dot:focus-visible {
+  outline: 2px solid var(--fg-brand-primary);
+  outline-offset: 2px;
+}
+
+/* ---------- active state ---------- */
+.pagination-dots__dot--active {
+  background: var(--fg-brand-primary);
+}
+
+/* ============================================================
+   DOT STYLE — sizes
+   ============================================================ */
+
+.pagination-dots--dot .pagination-dots__dot {
+  /* md default */
+  width: 8px;
+  height: 8px;
+}
+
+.pagination-dots--lg.pagination-dots--dot .pagination-dots__dot {
+  width: 10px;
+  height: 10px;
+}
+
+/* ============================================================
+   LINE STYLE — sizes
+   ============================================================ */
+
+.pagination-dots--line .pagination-dots__dot {
+  /* md default */
+  height: 6px;
+  width: 40px;
+  min-width: 1px;
+  min-height: 1px;
+}
+
+.pagination-dots--lg.pagination-dots--line .pagination-dots__dot {
+  height: 8px;
+  width: 40px;
+  min-width: 1px;
+  min-height: 1px;
+}

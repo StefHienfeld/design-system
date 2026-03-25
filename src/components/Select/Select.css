@@ -1,0 +1,305 @@
+/* ============================================================
+   Select Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- wrapper ---------- */
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  position: relative;
+}
+
+/* ---------- label ---------- */
+.select__label {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+}
+
+.select__required {
+  color: var(--text-brand-tertiary);
+}
+
+/* ---------- trigger ---------- */
+.select__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  background: var(--bg-primary);
+  box-shadow: none;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+/* --- size: md (default) --- */
+.select__trigger--md {
+  height: 44px;
+  padding: 10px 14px;
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+}
+
+/* --- size: sm --- */
+.select__trigger--sm {
+  height: 40px;
+  padding: 8px 12px;
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+}
+
+/* ---------- trigger text ---------- */
+.select__trigger-text {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.select__trigger-text--placeholder {
+  color: var(--text-placeholder);
+}
+
+/* ---------- trigger content with icon/avatar/dot ---------- */
+.select__trigger-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.select__trigger-content .select__trigger-text {
+  flex: initial;
+}
+
+/* ---------- chevron ---------- */
+.select__chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--fg-quaternary);
+  margin-left: var(--spacing-md);
+  transition: transform 120ms ease;
+}
+
+.select__chevron--open {
+  transform: rotate(180deg);
+}
+
+.select__chevron svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- focus state ---------- */
+.select__trigger:focus {
+  outline: none;
+  border-color: var(--border-brand);
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* ---------- error state ---------- */
+.select__trigger--error {
+  border-color: var(--border-error);
+}
+
+.select__trigger--error:focus {
+  border-color: var(--border-error);
+  box-shadow:
+    0 0 0 4px var(--color-error-100),
+    0 0 0 2px var(--bg-primary);
+}
+
+/* ---------- disabled state ---------- */
+.select__trigger--disabled {
+  background: var(--bg-disabled-subtle);
+  border-color: var(--border-disabled);
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+
+.select__trigger--disabled .select__trigger-text {
+  color: var(--text-disabled);
+}
+
+.select__trigger--disabled .select__trigger-text--placeholder {
+  color: var(--text-disabled);
+}
+
+.select__trigger--disabled .select__chevron {
+  color: var(--fg-disabled);
+}
+
+/* ---------- dropdown panel ---------- */
+.select__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-secondary-alt);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 100;
+  padding: var(--spacing-xs) 0;
+}
+
+/* ---------- search input in dropdown ---------- */
+.select__search {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--border-secondary);
+  gap: var(--spacing-md);
+}
+
+.select__search-icon {
+  display: flex;
+  align-items: center;
+  color: var(--fg-quaternary);
+  flex-shrink: 0;
+}
+
+.select__search-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.select__search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-primary);
+}
+
+.select__search-input::placeholder {
+  color: var(--text-placeholder);
+}
+
+.select__no-results {
+  padding: 10px 14px;
+  font-size: var(--font-size-text-sm);
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+/* ---------- option item ---------- */
+.select__option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-primary);
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  border-radius: 0;
+}
+
+.select__option:hover {
+  background: var(--bg-active);
+}
+
+.select__option--selected {
+  background: var(--bg-active);
+}
+
+/* ---------- option content with icon/avatar/dot ---------- */
+.select__option-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex: 1;
+  min-width: 0;
+}
+
+/* ---------- option icon ---------- */
+.select__option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--fg-secondary);
+}
+
+.select__option-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- option avatar ---------- */
+.select__option-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* ---------- option dot ---------- */
+.select__option-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* ---------- check icon (selected) ---------- */
+.select__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--fg-brand-primary);
+  margin-left: var(--spacing-md);
+}
+
+.select__check svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- hint text ---------- */
+.select__hint {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+}
+
+/* ---------- error text ---------- */
+.select__error {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-error-primary);
+}

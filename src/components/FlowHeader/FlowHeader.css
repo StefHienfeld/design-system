@@ -1,0 +1,172 @@
+/* ============================================================
+   FlowHeader Component Styles — Hienfeld Design System
+   Full-screen flow header bar for multi-step wizards.
+   ============================================================ */
+
+/* ---------- root container ---------- */
+.flow-header {
+  font-family: var(--font-family-body);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-secondary);
+  box-shadow: none;
+  padding: var(--spacing-xl) var(--spacing-4xl);
+  box-sizing: border-box;
+}
+
+/* ---------- top bar (logo | center | actions) ---------- */
+.flow-header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1184px;
+  margin: 0 auto;
+  min-height: 40px;
+}
+
+/* ---------- left section ---------- */
+.flow-header__left {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ---------- back button ---------- */
+.flow-header__back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-xxs);
+  background: transparent;
+  color: var(--fg-secondary);
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.flow-header__back-btn:hover {
+  background: var(--bg-primary-hover);
+  color: var(--fg-primary);
+}
+
+.flow-header__back-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.flow-header__back-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- center section ---------- */
+.flow-header__center {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+/* ---------- title text ---------- */
+.flow-header__title {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-text-xl);
+  line-height: var(--line-height-text-xl);
+  color: var(--text-primary);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- right section ---------- */
+.flow-header__right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--spacing-md);
+}
+
+/* ---------- close button ---------- */
+.flow-header__close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: var(--radius-xxs);
+  background: transparent;
+  color: var(--fg-secondary);
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.flow-header__close-btn:hover {
+  background: var(--bg-primary-hover);
+  color: var(--fg-primary);
+}
+
+.flow-header__close-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.flow-header__close-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- divider (visible in wrapped / small-screen layout) ---------- */
+.flow-header__divider {
+  display: none;
+  width: 100%;
+  height: 0;
+  border: none;
+  border-top: 1px solid var(--border-secondary);
+  margin: 0;
+}
+
+/* ---------- stepper row (for wrapped layout) ---------- */
+.flow-header__stepper-row {
+  display: none;
+  width: 100%;
+  max-width: 1184px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   Responsive: on small screens (<=640px) the stepper wraps
+   below the bar with a divider separating them.
+   ============================================================ */
+@media (max-width: 640px) {
+  .flow-header {
+    gap: var(--spacing-xl);
+  }
+
+  /* When stepper content exists, hide it from the center slot */
+  .flow-header--has-stepper .flow-header__center {
+    display: none;
+  }
+
+  /* Show the divider and bottom stepper row instead */
+  .flow-header--has-stepper .flow-header__divider {
+    display: block;
+  }
+
+  .flow-header--has-stepper .flow-header__stepper-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

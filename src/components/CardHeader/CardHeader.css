@@ -1,0 +1,120 @@
+/* ============================================================
+   CardHeader Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--spacing-2xl);
+  background-color: var(--bg-primary);
+  font-family: var(--font-family-body);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* ---------- content row ---------- */
+.card-header__content {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: flex-start;
+  padding-top: var(--spacing-2xl);
+  padding-left: var(--spacing-3xl);
+  padding-right: var(--spacing-3xl);
+}
+
+/* ---------- text & supporting text ---------- */
+.card-header__text-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxs);
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+/* ---------- title row (title + badge) ---------- */
+.card-header__title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* ---------- title ---------- */
+.card-header__title {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-text-lg);
+  line-height: var(--line-height-text-lg);
+  color: var(--text-primary);
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* ---------- supporting text ---------- */
+.card-header__supporting-text {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-tertiary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* ---------- avatar + text group ---------- */
+.card-header__avatar-group {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+/* ---------- actions ---------- */
+.card-header__actions {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ---------- dropdown button ---------- */
+.card-header__dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--fg-quaternary);
+  transition: color 120ms ease;
+}
+
+.card-header__dropdown:hover {
+  color: var(--fg-quaternary-hover);
+}
+
+.card-header__dropdown:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+  border-radius: var(--radius-xxs);
+}
+
+.card-header__dropdown svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- divider ---------- */
+.card-header__divider {
+  height: 1px;
+  width: 100%;
+  background-color: var(--border-secondary);
+  flex-shrink: 0;
+}

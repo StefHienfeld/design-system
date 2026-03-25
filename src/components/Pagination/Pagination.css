@@ -1,0 +1,132 @@
+/* ============================================================
+   Pagination Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base container ---------- */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  border-top: 1px solid var(--border-secondary);
+  padding: var(--spacing-lg) var(--spacing-2xl) var(--spacing-xl);
+  font-family: var(--font-family-body);
+  box-sizing: border-box;
+}
+
+/* ---------- prev / next nav buttons ---------- */
+.pagination__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  background-color: var(--bg-primary);
+  box-shadow: none;
+  color: var(--fg-secondary);
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.pagination__button:hover {
+  background-color: var(--bg-primary-hover);
+  color: var(--text-secondary-hover);
+}
+
+.pagination__button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.pagination__button:disabled,
+.pagination__button:disabled:hover {
+  background-color: var(--bg-disabled);
+  border-color: var(--border-disabled-subtle);
+  color: var(--fg-disabled);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.pagination__button svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ---------- button groups (prev pair / next pair) ---------- */
+.pagination__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* ---------- page number list ---------- */
+.pagination__pages {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xxs);
+}
+
+/* ---------- individual page button ---------- */
+.pagination__page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-md);
+  background: transparent;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-quaternary);
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.pagination__page:hover {
+  background-color: var(--bg-primary-hover);
+  color: var(--text-secondary);
+}
+
+.pagination__page:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+  border-radius: var(--radius-md);
+}
+
+/* ---------- active page ---------- */
+.pagination__page--active,
+.pagination__page--active:hover {
+  background-color: var(--bg-primary-hover);
+  color: var(--text-secondary);
+}
+
+/* ---------- ellipsis (non-interactive) ---------- */
+.pagination__ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-quaternary);
+  user-select: none;
+}

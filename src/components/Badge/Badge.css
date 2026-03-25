@@ -1,0 +1,504 @@
+/* ============================================================
+   Badge Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  box-sizing: border-box;
+}
+
+/* ---------- dot indicator ---------- */
+.badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* ---------- icon slot ---------- */
+.badge__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badge__icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ============================================================
+   SIZES
+   ============================================================ */
+
+/* --- sm: 12px / 18px --- */
+.badge--sm {
+  padding: 2px 8px;
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+  gap: 6px;
+}
+
+/* --- md: 14px / 20px --- */
+.badge--md {
+  padding: 2px 10px;
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  gap: 6px;
+}
+
+/* --- lg: 14px / 20px, more vertical padding --- */
+.badge--lg {
+  padding: 4px 12px;
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  gap: 6px;
+}
+
+/* ============================================================
+   TYPE — PILL-COLOR
+   ============================================================ */
+.badge--pill-color {
+  border-radius: var(--radius-full);
+}
+
+/* ============================================================
+   TYPE — PILL-OUTLINE
+   ============================================================ */
+.badge--pill-outline {
+  border-radius: var(--radius-full);
+  background-color: transparent;
+  border: 1.5px solid;
+}
+
+/* ============================================================
+   TYPE — BADGE-COLOR
+   ============================================================ */
+.badge--badge-color {
+  border-radius: var(--radius-xxs);
+}
+
+/* ============================================================
+   TYPE — BADGE-MODERN
+   ============================================================ */
+.badge--badge-modern {
+  border-radius: var(--radius-xxs);
+  background-color: #ffffff;
+  border: 1px solid var(--border-primary);
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   COLOR — BRAND
+   ============================================================ */
+.badge--pill-color.badge--brand {
+  background-color: var(--color-brand-50);
+  color: var(--color-brand-700);
+}
+.badge--pill-color.badge--brand .badge__dot {
+  background-color: var(--color-brand-500);
+}
+
+.badge--pill-outline.badge--brand {
+  border-color: var(--color-brand-200);
+  color: var(--color-brand-700);
+}
+.badge--pill-outline.badge--brand .badge__dot {
+  background-color: var(--color-brand-500);
+}
+
+.badge--badge-color.badge--brand {
+  background-color: var(--color-brand-50);
+  color: var(--color-brand-700);
+}
+.badge--badge-color.badge--brand .badge__dot {
+  background-color: var(--color-brand-500);
+}
+
+.badge--badge-modern.badge--brand .badge__dot {
+  background-color: var(--color-brand-500);
+}
+.badge--badge-modern.badge--brand .badge__icon {
+  color: var(--color-brand-500);
+}
+
+/* ============================================================
+   COLOR — GRAY
+   ============================================================ */
+.badge--pill-color.badge--gray {
+  background-color: var(--color-gray-50);
+  color: var(--color-gray-700);
+}
+.badge--pill-color.badge--gray .badge__dot {
+  background-color: var(--color-gray-500);
+}
+
+.badge--pill-outline.badge--gray {
+  border-color: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+.badge--pill-outline.badge--gray .badge__dot {
+  background-color: var(--color-gray-500);
+}
+
+.badge--badge-color.badge--gray {
+  background-color: var(--color-gray-50);
+  color: var(--color-gray-700);
+}
+.badge--badge-color.badge--gray .badge__dot {
+  background-color: var(--color-gray-500);
+}
+
+.badge--badge-modern.badge--gray .badge__dot {
+  background-color: var(--color-gray-500);
+}
+.badge--badge-modern.badge--gray .badge__icon {
+  color: var(--color-gray-500);
+}
+
+/* ============================================================
+   COLOR — ERROR
+   ============================================================ */
+.badge--pill-color.badge--error {
+  background-color: var(--color-error-50);
+  color: var(--color-error-700);
+}
+.badge--pill-color.badge--error .badge__dot {
+  background-color: var(--color-error-500);
+}
+
+.badge--pill-outline.badge--error {
+  border-color: var(--color-error-200);
+  color: var(--color-error-700);
+}
+.badge--pill-outline.badge--error .badge__dot {
+  background-color: var(--color-error-500);
+}
+
+.badge--badge-color.badge--error {
+  background-color: var(--color-error-50);
+  color: var(--color-error-700);
+}
+.badge--badge-color.badge--error .badge__dot {
+  background-color: var(--color-error-500);
+}
+
+.badge--badge-modern.badge--error .badge__dot {
+  background-color: var(--color-error-500);
+}
+.badge--badge-modern.badge--error .badge__icon {
+  color: var(--color-error-500);
+}
+
+/* ============================================================
+   COLOR — WARNING
+   ============================================================ */
+.badge--pill-color.badge--warning {
+  background-color: var(--color-warning-50);
+  color: var(--color-warning-700);
+}
+.badge--pill-color.badge--warning .badge__dot {
+  background-color: var(--color-warning-500);
+}
+
+.badge--pill-outline.badge--warning {
+  border-color: var(--color-warning-200);
+  color: var(--color-warning-700);
+}
+.badge--pill-outline.badge--warning .badge__dot {
+  background-color: var(--color-warning-500);
+}
+
+.badge--badge-color.badge--warning {
+  background-color: var(--color-warning-50);
+  color: var(--color-warning-700);
+}
+.badge--badge-color.badge--warning .badge__dot {
+  background-color: var(--color-warning-500);
+}
+
+.badge--badge-modern.badge--warning .badge__dot {
+  background-color: var(--color-warning-500);
+}
+.badge--badge-modern.badge--warning .badge__icon {
+  color: var(--color-warning-500);
+}
+
+/* ============================================================
+   COLOR — SUCCESS
+   ============================================================ */
+.badge--pill-color.badge--success {
+  background-color: var(--color-success-50);
+  color: var(--color-success-700);
+}
+.badge--pill-color.badge--success .badge__dot {
+  background-color: var(--color-success-500);
+}
+
+.badge--pill-outline.badge--success {
+  border-color: var(--color-success-200);
+  color: var(--color-success-700);
+}
+.badge--pill-outline.badge--success .badge__dot {
+  background-color: var(--color-success-500);
+}
+
+.badge--badge-color.badge--success {
+  background-color: var(--color-success-50);
+  color: var(--color-success-700);
+}
+.badge--badge-color.badge--success .badge__dot {
+  background-color: var(--color-success-500);
+}
+
+.badge--badge-modern.badge--success .badge__dot {
+  background-color: var(--color-success-500);
+}
+.badge--badge-modern.badge--success .badge__icon {
+  color: var(--color-success-500);
+}
+
+/* ============================================================
+   COLOR — GRAY-BLUE
+   ============================================================ */
+.badge--pill-color.badge--gray-blue {
+  background-color: var(--color-gray-blue-50);
+  color: var(--color-gray-blue-700);
+}
+.badge--pill-color.badge--gray-blue .badge__dot {
+  background-color: var(--color-gray-blue-500);
+}
+
+.badge--pill-outline.badge--gray-blue {
+  border-color: var(--color-gray-blue-200);
+  color: var(--color-gray-blue-700);
+}
+.badge--pill-outline.badge--gray-blue .badge__dot {
+  background-color: var(--color-gray-blue-500);
+}
+
+.badge--badge-color.badge--gray-blue {
+  background-color: var(--color-gray-blue-50);
+  color: var(--color-gray-blue-700);
+}
+.badge--badge-color.badge--gray-blue .badge__dot {
+  background-color: var(--color-gray-blue-500);
+}
+
+.badge--badge-modern.badge--gray-blue .badge__dot {
+  background-color: var(--color-gray-blue-500);
+}
+.badge--badge-modern.badge--gray-blue .badge__icon {
+  color: var(--color-gray-blue-500);
+}
+
+/* ============================================================
+   COLOR — BLUE-LIGHT
+   ============================================================ */
+.badge--pill-color.badge--blue-light {
+  background-color: var(--color-blue-light-50);
+  color: var(--color-blue-light-700);
+}
+.badge--pill-color.badge--blue-light .badge__dot {
+  background-color: var(--color-blue-light-500);
+}
+
+.badge--pill-outline.badge--blue-light {
+  border-color: var(--color-blue-light-200);
+  color: var(--color-blue-light-700);
+}
+.badge--pill-outline.badge--blue-light .badge__dot {
+  background-color: var(--color-blue-light-500);
+}
+
+.badge--badge-color.badge--blue-light {
+  background-color: var(--color-blue-light-50);
+  color: var(--color-blue-light-700);
+}
+.badge--badge-color.badge--blue-light .badge__dot {
+  background-color: var(--color-blue-light-500);
+}
+
+.badge--badge-modern.badge--blue-light .badge__dot {
+  background-color: var(--color-blue-light-500);
+}
+.badge--badge-modern.badge--blue-light .badge__icon {
+  color: var(--color-blue-light-500);
+}
+
+/* ============================================================
+   COLOR — BLUE
+   ============================================================ */
+.badge--pill-color.badge--blue {
+  background-color: var(--color-blue-50);
+  color: var(--color-blue-700);
+}
+.badge--pill-color.badge--blue .badge__dot {
+  background-color: var(--color-blue-500);
+}
+
+.badge--pill-outline.badge--blue {
+  border-color: var(--color-blue-200);
+  color: var(--color-blue-700);
+}
+.badge--pill-outline.badge--blue .badge__dot {
+  background-color: var(--color-blue-500);
+}
+
+.badge--badge-color.badge--blue {
+  background-color: var(--color-blue-50);
+  color: var(--color-blue-700);
+}
+.badge--badge-color.badge--blue .badge__dot {
+  background-color: var(--color-blue-500);
+}
+
+.badge--badge-modern.badge--blue .badge__dot {
+  background-color: var(--color-blue-500);
+}
+.badge--badge-modern.badge--blue .badge__icon {
+  color: var(--color-blue-500);
+}
+
+/* ============================================================
+   COLOR — INDIGO
+   ============================================================ */
+.badge--pill-color.badge--indigo {
+  background-color: var(--color-indigo-50);
+  color: var(--color-indigo-700);
+}
+.badge--pill-color.badge--indigo .badge__dot {
+  background-color: var(--color-indigo-500);
+}
+
+.badge--pill-outline.badge--indigo {
+  border-color: var(--color-indigo-200);
+  color: var(--color-indigo-700);
+}
+.badge--pill-outline.badge--indigo .badge__dot {
+  background-color: var(--color-indigo-500);
+}
+
+.badge--badge-color.badge--indigo {
+  background-color: var(--color-indigo-50);
+  color: var(--color-indigo-700);
+}
+.badge--badge-color.badge--indigo .badge__dot {
+  background-color: var(--color-indigo-500);
+}
+
+.badge--badge-modern.badge--indigo .badge__dot {
+  background-color: var(--color-indigo-500);
+}
+.badge--badge-modern.badge--indigo .badge__icon {
+  color: var(--color-indigo-500);
+}
+
+/* ============================================================
+   COLOR — PURPLE
+   ============================================================ */
+.badge--pill-color.badge--purple {
+  background-color: var(--color-purple-50);
+  color: var(--color-purple-700);
+}
+.badge--pill-color.badge--purple .badge__dot {
+  background-color: var(--color-purple-500);
+}
+
+.badge--pill-outline.badge--purple {
+  border-color: var(--color-purple-200);
+  color: var(--color-purple-700);
+}
+.badge--pill-outline.badge--purple .badge__dot {
+  background-color: var(--color-purple-500);
+}
+
+.badge--badge-color.badge--purple {
+  background-color: var(--color-purple-50);
+  color: var(--color-purple-700);
+}
+.badge--badge-color.badge--purple .badge__dot {
+  background-color: var(--color-purple-500);
+}
+
+.badge--badge-modern.badge--purple .badge__dot {
+  background-color: var(--color-purple-500);
+}
+.badge--badge-modern.badge--purple .badge__icon {
+  color: var(--color-purple-500);
+}
+
+/* ============================================================
+   COLOR — PINK
+   ============================================================ */
+.badge--pill-color.badge--pink {
+  background-color: var(--color-pink-50);
+  color: var(--color-pink-700);
+}
+.badge--pill-color.badge--pink .badge__dot {
+  background-color: var(--color-pink-500);
+}
+
+.badge--pill-outline.badge--pink {
+  border-color: var(--color-pink-200);
+  color: var(--color-pink-700);
+}
+.badge--pill-outline.badge--pink .badge__dot {
+  background-color: var(--color-pink-500);
+}
+
+.badge--badge-color.badge--pink {
+  background-color: var(--color-pink-50);
+  color: var(--color-pink-700);
+}
+.badge--badge-color.badge--pink .badge__dot {
+  background-color: var(--color-pink-500);
+}
+
+.badge--badge-modern.badge--pink .badge__dot {
+  background-color: var(--color-pink-500);
+}
+.badge--badge-modern.badge--pink .badge__icon {
+  color: var(--color-pink-500);
+}
+
+/* ============================================================
+   COLOR — ORANGE
+   ============================================================ */
+.badge--pill-color.badge--orange {
+  background-color: var(--color-orange-50);
+  color: var(--color-orange-700);
+}
+.badge--pill-color.badge--orange .badge__dot {
+  background-color: var(--color-orange-500);
+}
+
+.badge--pill-outline.badge--orange {
+  border-color: var(--color-orange-200);
+  color: var(--color-orange-700);
+}
+.badge--pill-outline.badge--orange .badge__dot {
+  background-color: var(--color-orange-500);
+}
+
+.badge--badge-color.badge--orange {
+  background-color: var(--color-orange-50);
+  color: var(--color-orange-700);
+}
+.badge--badge-color.badge--orange .badge__dot {
+  background-color: var(--color-orange-500);
+}
+
+.badge--badge-modern.badge--orange .badge__dot {
+  background-color: var(--color-orange-500);
+}
+.badge--badge-modern.badge--orange .badge__icon {
+  color: var(--color-orange-500);
+}

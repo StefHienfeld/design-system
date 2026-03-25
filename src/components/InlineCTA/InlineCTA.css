@@ -1,0 +1,136 @@
+/* ============================================================
+   InlineCTA Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.inline-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family-body);
+  box-sizing: border-box;
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-xl);
+  background-color: var(--bg-primary);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+/* ============================================================
+   IMAGE
+   ============================================================ */
+.inline-cta__image-wrap {
+  flex-shrink: 0;
+  overflow: hidden;
+  align-self: stretch;
+}
+
+.inline-cta__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Desktop: image on the left, fixed width */
+.inline-cta__image-wrap {
+  width: 240px;
+}
+
+/* ============================================================
+   BODY — title + description + actions zone
+   ============================================================ */
+.inline-cta__body {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  flex: 1;
+  min-width: 0;
+  padding: var(--spacing-3xl);
+}
+
+/* When used without image (actions / children variant) */
+.inline-cta--no-image .inline-cta__body {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--spacing-2xl);
+}
+
+/* ============================================================
+   TEXT GROUP
+   ============================================================ */
+.inline-cta__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxs);
+  flex: 1;
+  min-width: 0;
+}
+
+/* ---------- title ---------- */
+.inline-cta__title {
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ---------- description ---------- */
+.inline-cta__description {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+/* ============================================================
+   ACTIONS
+   ============================================================ */
+.inline-cta__actions {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   CHILDREN (custom content area — email field, plan selector, etc.)
+   ============================================================ */
+.inline-cta__children {
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   RESPONSIVE — mobile stacking
+   ============================================================ */
+@media (max-width: 767px) {
+  .inline-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Image takes full width on mobile */
+  .inline-cta__image-wrap {
+    width: 100%;
+    height: 200px;
+  }
+
+  .inline-cta__body {
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-2xl);
+    gap: var(--spacing-2xl);
+  }
+
+  .inline-cta__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .inline-cta__children {
+    width: 100%;
+  }
+}

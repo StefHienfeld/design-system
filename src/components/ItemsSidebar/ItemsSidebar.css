@@ -1,0 +1,136 @@
+/* ============================================================
+   ItemsSidebar Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+
+   BEM block: .items-sidebar
+   ============================================================ */
+
+/* ---------- root ---------- */
+.items-sidebar {
+  display: flex;
+  align-items: flex-start;
+  width: 310px;
+  height: 100%;
+  background-color: var(--bg-primary);
+  border-right: 1px solid var(--border-secondary);
+  box-sizing: border-box;
+  font-family: var(--font-family-body);
+}
+
+/* ---------- content wrapper ---------- */
+.items-sidebar__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  min-width: 1px;
+  min-height: 1px;
+  height: 100%;
+  border-radius: var(--radius-xxs);
+}
+
+/* ---------- navigation ---------- */
+.items-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  flex-shrink: 0;
+  padding-top: var(--spacing-2xl);
+}
+
+/* ---------- section heading ---------- */
+.items-sidebar__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 var(--spacing-2xl) var(--spacing-md);
+}
+
+.items-sidebar__title {
+  width: 100%;
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-quaternary);
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+/* ---------- section (items + add button) ---------- */
+.items-sidebar__section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-xl);
+  width: 100%;
+  padding: 0 var(--spacing-2xl) var(--spacing-2xl);
+}
+
+/* ---------- items list ---------- */
+.items-sidebar__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.items-sidebar__list-item {
+  width: 100%;
+}
+
+/* ---------- add button ---------- */
+.items-sidebar__add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  background-color: var(--bg-primary);
+  box-shadow: none;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  box-sizing: border-box;
+  transition: background-color 120ms ease;
+}
+
+.items-sidebar__add-btn:hover {
+  background-color: var(--bg-primary-hover);
+}
+
+.items-sidebar__add-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.items-sidebar__add-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.items-sidebar__add-btn-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.items-sidebar__add-btn-text {
+  padding: 0 var(--spacing-xxs);
+}

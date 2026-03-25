@@ -1,0 +1,9 @@
+.logo {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.logo svg {
+  width: 100%;
+  height: auto;
+}

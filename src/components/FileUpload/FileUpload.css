@@ -1,0 +1,345 @@
+/* ============================================================
+   FileUpload Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- root ---------- */
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-xl);
+  width: 100%;
+}
+
+/* ============================================================
+   DROP ZONE
+   ============================================================ */
+.file-upload__dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-3xl);
+  background-color: var(--bg-primary);
+  border: 1px dashed var(--border-secondary);
+  border-radius: var(--radius-xxs);
+  cursor: pointer;
+  transition: border-color 150ms, background-color 150ms;
+}
+
+.file-upload__dropzone:hover {
+  border-color: var(--border-brand);
+}
+
+.file-upload__dropzone--dragover {
+  border-color: var(--fg-brand-primary);
+  background-color: var(--bg-secondary);
+}
+
+/* ---------- featured icon ---------- */
+.file-upload__icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  background-color: var(--bg-primary);
+  box-shadow: none;
+}
+
+.file-upload__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--fg-quaternary);
+}
+
+/* ---------- content area ---------- */
+.file-upload__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+/* ---------- action text ---------- */
+.file-upload__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.file-upload__action-link {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-brand-secondary);
+  cursor: pointer;
+}
+
+.file-upload__action-link:hover {
+  color: var(--text-brand-secondary-hover);
+}
+
+.file-upload__action-text {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+}
+
+/* ---------- hint text ---------- */
+.file-upload__hint {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+  text-align: center;
+  width: 100%;
+}
+
+/* ---------- hidden native input ---------- */
+.file-upload__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================================
+   FILE QUEUE
+   ============================================================ */
+.file-upload__queue {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+/* ============================================================
+   FILE ITEM
+   ============================================================ */
+.file-upload-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--spacing-xl);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-xxs);
+  width: 100%;
+}
+
+.file-upload-item--error {
+  border-color: var(--border-error-subtle);
+}
+
+/* ---------- file type icon ---------- */
+.file-upload-item__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-upload-item__icon svg {
+  width: 32px;
+  height: 40px;
+}
+
+/* ---------- content area ---------- */
+.file-upload-item__content {
+  display: flex;
+  flex: 1 0 0;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.file-upload-item__details {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  align-items: flex-start;
+  min-width: 0;
+}
+
+/* ---------- text and supporting text ---------- */
+.file-upload-item__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxs);
+  width: 100%;
+}
+
+.file-upload-item__name {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+/* ---------- supporting text row ---------- */
+.file-upload-item__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.file-upload-item__size {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- divider ---------- */
+.file-upload-item__divider {
+  width: 1px;
+  height: 12px;
+  background-color: var(--border-secondary);
+  flex-shrink: 0;
+}
+
+/* ---------- status ---------- */
+.file-upload-item__status {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+}
+
+.file-upload-item__status-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.file-upload-item__status-icon--uploading {
+  color: var(--fg-quaternary);
+}
+
+.file-upload-item__status-icon--complete {
+  color: var(--color-success-600);
+}
+
+.file-upload-item__status-icon--error {
+  color: var(--color-error-600);
+}
+
+.file-upload-item__status-text {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+
+.file-upload-item__status-text--uploading {
+  color: var(--text-quaternary);
+}
+
+.file-upload-item__status-text--complete {
+  color: var(--color-success-600);
+}
+
+.file-upload-item__status-text--error {
+  color: var(--color-error-600);
+}
+
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
+.file-upload-item__progress-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.file-upload-item__progress-track {
+  flex: 1 0 0;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-quaternary);
+  position: relative;
+  overflow: hidden;
+}
+
+.file-upload-item__progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--fg-brand-primary);
+  transition: width 200ms ease-out;
+}
+
+.file-upload-item__progress-fill--error {
+  background-color: var(--color-error-600);
+}
+
+.file-upload-item__progress-percent {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   REMOVE BUTTON
+   ============================================================ */
+.file-upload-item__remove {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-xxs);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--fg-quaternary);
+  transition: color 150ms;
+}
+
+.file-upload-item__remove:hover {
+  color: var(--fg-quaternary-hover);
+}
+
+.file-upload-item__remove svg {
+  width: 16px;
+  height: 16px;
+}

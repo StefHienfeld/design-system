@@ -1,0 +1,274 @@
+/* ============================================================
+   Notification Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.notification {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 400px;
+  background: var(--bg-primary-alt);
+  border: 1px solid var(--border-secondary-alt);
+  border-radius: var(--radius-xxs);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+  font-family: var(--font-family-body);
+}
+
+/* ============================================================
+   TYPE MODIFIERS
+   ============================================================ */
+
+/* Image variant: side-by-side layout (image left, content right) */
+.notification--image {
+  flex-direction: row;
+}
+
+/* All non-image types: column-ish content with padding */
+.notification--primary,
+.notification--gray,
+.notification--error,
+.notification--warning,
+.notification--success,
+.notification--plain,
+.notification--progress {
+  flex-direction: row;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+}
+
+/* ============================================================
+   ICON AREA
+   ============================================================ */
+
+.notification__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Round colored icons (primary, success, error, warning) */
+.notification__icon-wrap--round {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+}
+
+.notification--primary .notification__icon-wrap--round {
+  background: var(--color-brand-100);
+  color: var(--color-brand-600);
+}
+
+.notification--success .notification__icon-wrap--round {
+  background: var(--color-success-100);
+  color: var(--color-success-600);
+}
+
+.notification--error .notification__icon-wrap--round,
+.notification--warning .notification__icon-wrap--round {
+  background: var(--color-error-100);
+  color: var(--color-error-600);
+}
+
+/* Square gray/progress icon container */
+.notification__icon-wrap--square {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-xxs);
+  border: 1px solid var(--border-primary);
+  background: var(--bg-primary);
+  box-shadow: none;
+  color: var(--fg-primary);
+}
+
+.notification__icon-wrap svg {
+  width: 16px;
+  height: 16px;
+}
+
+.notification__icon-wrap--square svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================================
+   IMAGE AREA (image variant)
+   ============================================================ */
+
+.notification__image-wrap {
+  width: 160px;
+  flex-shrink: 0;
+  align-self: stretch;
+  background: var(--bg-secondary);
+  overflow: hidden;
+  position: relative;
+}
+
+.notification__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+.notification__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+/* When paired with an icon, add right padding for the close button */
+.notification__body {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xl);
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+/* Image variant: content wrapper with its own padding + border treatment */
+.notification--image .notification__body {
+  padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) var(--spacing-2xl);
+  border-top: 1px solid var(--border-secondary-alt);
+  border-right: 1px solid var(--border-secondary-alt);
+  border-bottom: 1px solid var(--border-secondary-alt);
+  background: var(--bg-primary-alt);
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+/* ============================================================
+   TEXT
+   ============================================================ */
+
+.notification__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  flex: 1 1 0%;
+  min-width: 0;
+  padding-right: var(--spacing-4xl);
+}
+
+/* Progress variant: text also needs close-button padding from its own container */
+.notification--progress .notification__text {
+  padding-right: var(--spacing-4xl);
+}
+
+.notification__title {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--fg-primary);
+  margin: 0;
+}
+
+.notification__description {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--fg-secondary);
+  margin: 0;
+}
+
+/* Primary icon: slight top padding to align text with icon center */
+.notification--primary .notification__content,
+.notification--success .notification__content,
+.notification--error .notification__content,
+.notification--warning .notification__content {
+  padding-top: var(--spacing-xxs);
+}
+
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
+
+.notification__progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: flex-end;
+  width: 100%;
+}
+
+.notification__progress-bar {
+  width: 100%;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--bg-quaternary);
+  overflow: hidden;
+  position: relative;
+}
+
+.notification__progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: var(--fg-brand-primary);
+  transition: width 0.3s ease;
+}
+
+.notification__progress-label {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--fg-secondary);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   ACTIONS
+   ============================================================ */
+
+.notification__actions {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+}
+
+/* ============================================================
+   CLOSE BUTTON
+   ============================================================ */
+
+.notification__close {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: var(--spacing-md);
+  background: none;
+  border: none;
+  border-radius: var(--radius-xxs);
+  cursor: pointer;
+  color: var(--fg-quaternary);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.notification__close:hover {
+  color: var(--fg-quaternary-hover);
+  background: var(--bg-primary-hover);
+}
+
+.notification__close svg {
+  width: 20px;
+  height: 20px;
+}

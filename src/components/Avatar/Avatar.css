@@ -1,0 +1,93 @@
+/* ============================================================
+   Avatar Component Styles — Hienfeld Design System
+   ============================================================ */
+
+/* ---------- base ---------- */
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+/* ---------- image ---------- */
+.avatar__image {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+/* ---------- fallback (initials) ---------- */
+.avatar__fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: var(--color-brand-50);
+  color: var(--color-brand-600);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* ---------- size-specific font sizes ---------- */
+.avatar--xs .avatar__fallback {
+  font-size: 10px;
+}
+
+.avatar--sm .avatar__fallback {
+  font-size: var(--font-size-text-xs);
+}
+
+.avatar--md .avatar__fallback {
+  font-size: var(--font-size-text-sm);
+}
+
+.avatar--lg .avatar__fallback {
+  font-size: var(--font-size-text-md);
+}
+
+.avatar--xl .avatar__fallback {
+  font-size: var(--font-size-text-lg);
+}
+
+/* ---------- online indicator ---------- */
+.avatar__indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  border: 2px solid #ffffff;
+  box-sizing: content-box;
+}
+
+.avatar__indicator--online {
+  background-color: var(--color-success-500);
+}
+
+.avatar__indicator--offline {
+  background-color: var(--color-gray-400);
+}
+
+/* ---------- size-specific indicator positioning ---------- */
+.avatar--xs .avatar__indicator {
+  width: 6px;
+  height: 6px;
+  border-width: 1.5px;
+}
+
+.avatar--sm .avatar__indicator {
+  width: 8px;
+  height: 8px;
+  border-width: 1.5px;
+}

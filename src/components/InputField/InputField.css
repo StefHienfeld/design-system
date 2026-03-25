@@ -1,0 +1,283 @@
+/* ============================================================
+   InputField Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- wrapper ---------- */
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* ---------- label ---------- */
+.input-field__label {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+}
+
+.input-field__required {
+  color: var(--text-brand-tertiary);
+}
+
+/* ---------- input container ---------- */
+.input-field__container {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  background: var(--bg-primary);
+  box-shadow: none;
+  overflow: hidden;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+/* --- size: md (default) --- */
+.input-field__container--md {
+  height: 44px;
+}
+
+.input-field__container--md .input-field__input {
+  padding: 10px 14px;
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+}
+
+/* --- size: sm --- */
+.input-field__container--sm {
+  height: 40px;
+}
+
+.input-field__container--sm .input-field__input {
+  padding: 8px 12px;
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+}
+
+/* ---------- input element ---------- */
+.input-field__input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-primary);
+}
+
+.input-field__input::placeholder {
+  color: var(--text-placeholder);
+}
+
+/* ---------- focus state ---------- */
+.input-field__container:focus-within {
+  border-color: var(--border-brand);
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* ---------- error / destructive state ---------- */
+.input-field__container--error {
+  border-color: var(--border-error);
+}
+
+.input-field__container--error:focus-within {
+  border-color: var(--border-error);
+  box-shadow:
+    0 0 0 4px var(--color-error-100),
+    0 0 0 2px var(--bg-primary);
+}
+
+/* ---------- disabled state ---------- */
+.input-field__container--disabled {
+  background: var(--bg-disabled-subtle);
+  border-color: var(--border-disabled);
+  cursor: not-allowed;
+}
+
+.input-field__container--disabled .input-field__input {
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+
+.input-field__container--disabled .input-field__input::placeholder {
+  color: var(--text-disabled);
+}
+
+/* ---------- leading text addon ---------- */
+.input-field__leading-text {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  padding: 10px 12px;
+  background: var(--bg-tertiary);
+  border-right: 1px solid var(--border-primary);
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ---------- leading icon ---------- */
+.input-field__icon-leading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding-left: 14px;
+  color: var(--fg-quaternary);
+}
+
+.input-field__container--sm .input-field__icon-leading {
+  padding-left: 12px;
+}
+
+.input-field__icon-leading svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Reduce left padding on input when leading icon is present */
+.input-field__container--has-leading-icon .input-field__input {
+  padding-left: var(--spacing-lg);
+}
+
+/* ---------- trailing icon ---------- */
+.input-field__icon-trailing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding-right: 14px;
+  color: var(--fg-quaternary);
+}
+
+.input-field__container--sm .input-field__icon-trailing {
+  padding-right: 12px;
+}
+
+.input-field__icon-trailing svg {
+  width: 16px;
+  height: 16px;
+}
+
+.input-field__icon-trailing--error {
+  color: var(--fg-error-secondary);
+}
+
+/* Reduce right padding on input when trailing icon or error icon is present */
+.input-field__container--has-trailing-icon .input-field__input,
+.input-field__container--has-error-icon .input-field__input {
+  padding-right: var(--spacing-lg);
+}
+
+/* ---------- trailing button ---------- */
+.input-field__trailing-button {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  padding: 0 16px;
+  background: var(--bg-brand-solid);
+  color: var(--text-white);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  border-left: 1px solid var(--border-primary);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.input-field__trailing-button:hover {
+  background: var(--bg-brand-solid-hover);
+}
+
+.input-field__trailing-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Trailing button size variants */
+.input-field__container--md .input-field__trailing-button {
+  padding: 10px 16px;
+}
+
+.input-field__container--sm .input-field__trailing-button {
+  padding: 8px 12px;
+}
+
+/* ---------- leading / trailing dropdown ---------- */
+.input-field__leading-dropdown,
+.input-field__trailing-dropdown {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  padding: 0 12px;
+  background: var(--bg-tertiary);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-md);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  gap: var(--spacing-xs);
+  cursor: pointer;
+}
+
+.input-field__leading-dropdown {
+  border-right: 1px solid var(--border-primary);
+}
+
+.input-field__trailing-dropdown {
+  border-left: 1px solid var(--border-primary);
+}
+
+.input-field__leading-dropdown select,
+.input-field__trailing-dropdown select {
+  appearance: none;
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  padding-right: 4px;
+}
+
+.input-field__leading-dropdown select:disabled,
+.input-field__trailing-dropdown select:disabled {
+  cursor: not-allowed;
+}
+
+.input-field__dropdown-chevron {
+  display: flex;
+  color: var(--fg-quaternary);
+}
+
+.input-field__dropdown-chevron svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- hint text ---------- */
+.input-field__hint {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+}
+
+/* ---------- error text ---------- */
+.input-field__error {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-error-primary);
+}

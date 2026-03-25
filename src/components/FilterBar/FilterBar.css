@@ -1,0 +1,200 @@
+/* ============================================================
+   FilterBar Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+/* ---------- search wrapper (icon + input) ---------- */
+.filter-bar__search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  max-width: 320px;
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  background: var(--bg-primary);
+  box-shadow: none;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.filter-bar__search-wrapper:focus-within {
+  border-color: var(--border-brand);
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.filter-bar__search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--fg-quaternary);
+}
+
+.filter-bar__search-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.filter-bar__search-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-text-md);
+  color: var(--text-primary);
+  padding: 0;
+}
+
+.filter-bar__search-input::placeholder {
+  color: var(--text-placeholder);
+}
+
+/* ---------- filters button ---------- */
+.filter-bar__filters-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: 10px 14px;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  background: var(--bg-primary);
+  box-shadow: none;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.filter-bar__filters-button:hover {
+  background-color: var(--bg-primary-hover);
+  color: var(--text-secondary-hover);
+}
+
+.filter-bar__filters-button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.filter-bar__filters-button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.filter-bar__filters-button-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- separator ---------- */
+.filter-bar__separator {
+  width: 1px;
+  align-self: stretch;
+  background-color: var(--border-primary);
+  flex-shrink: 0;
+}
+
+/* ---------- active filters ---------- */
+.filter-bar__active-filters {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+/* ---------- filter badge ---------- */
+.filter-bar__filter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xxs);
+  padding: var(--spacing-xxs) var(--spacing-xs) var(--spacing-xxs) var(--spacing-md);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xs);
+  background: var(--bg-primary);
+  box-shadow: none;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.filter-bar__filter-badge-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xxs);
+  border: none;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--fg-quaternary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 120ms ease;
+}
+
+.filter-bar__filter-badge-remove:hover {
+  color: var(--fg-quaternary-hover);
+}
+
+.filter-bar__filter-badge-remove:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.filter-bar__filter-badge-remove svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ---------- clear all ---------- */
+.filter-bar__clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-xxs);
+  background: transparent;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-brand-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 120ms ease;
+}
+
+.filter-bar__clear:hover {
+  color: var(--text-brand-secondary-hover);
+}
+
+.filter-bar__clear:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}

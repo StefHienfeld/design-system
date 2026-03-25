@@ -1,0 +1,151 @@
+/* ============================================================
+   Breadcrumb Component Styles — Hienfeld Design System
+   ============================================================ */
+
+/* ---------- nav wrapper ---------- */
+.breadcrumb {
+  font-family: var(--font-family-body);
+}
+
+/* ---------- list ---------- */
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0;
+}
+
+/* ---------- item ---------- */
+.breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---------- separator ---------- */
+.breadcrumb__separator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg-quaternary);
+  flex-shrink: 0;
+}
+
+/* Chevron divider: 16px icon, md margin */
+.breadcrumb--divider-chevron .breadcrumb__separator {
+  margin: 0 var(--spacing-md);
+}
+
+.breadcrumb--divider-chevron .breadcrumb__separator svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Slash divider: 20px icon, sm margin for text, xxs for button */
+.breadcrumb--divider-slash .breadcrumb__separator {
+  margin: 0 var(--spacing-sm);
+}
+
+.breadcrumb--divider-slash .breadcrumb__separator svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Tighter gap for button type */
+.breadcrumb--type-button.breadcrumb--divider-chevron .breadcrumb__separator {
+  margin: 0 var(--spacing-xs);
+}
+
+.breadcrumb--type-button.breadcrumb--divider-slash .breadcrumb__separator {
+  margin: 0 var(--spacing-xxs);
+}
+
+/* ---------- link ---------- */
+.breadcrumb__link {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-quaternary);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+.breadcrumb__link:hover {
+  color: var(--text-brand-secondary);
+}
+
+.breadcrumb__link:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+  border-radius: var(--radius-xs);
+}
+
+/* native <button> reset (no href provided) */
+.breadcrumb__link--native-button {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+}
+
+/* ---------- text (non-interactive / current) ---------- */
+.breadcrumb__text {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-quaternary);
+}
+
+.breadcrumb__text--current {
+  color: var(--text-brand-secondary);
+}
+
+/* ============================================================
+   TYPE VARIANT: text-with-line
+   ============================================================ */
+.breadcrumb--type-text-with-line {
+  border-top: 1px solid var(--border-secondary);
+  border-bottom: 1px solid var(--border-secondary);
+  padding: var(--spacing-md) 0;
+}
+
+.breadcrumb--type-text-with-line .breadcrumb__list {
+  padding-left: var(--spacing-md);
+}
+
+/* ============================================================
+   TYPE VARIANT: button
+   ============================================================ */
+
+/* Links in button type get rounded pill treatment */
+.breadcrumb__link--type-button {
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  transition: color 120ms ease, background-color 120ms ease;
+}
+
+.breadcrumb__link--type-button:hover {
+  background-color: var(--bg-primary-hover);
+  color: var(--text-tertiary-hover);
+}
+
+.breadcrumb__link--type-button:focus-visible {
+  border-radius: var(--radius-sm);
+}
+
+/* Native button reset within button type */
+.breadcrumb__link--type-button.breadcrumb__link--native-button {
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+}
+
+/* Current item in button type: highlighted bg */
+.breadcrumb__text--current-button {
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-primary-hover);
+  color: var(--text-tertiary-hover);
+}

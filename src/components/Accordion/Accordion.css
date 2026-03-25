@@ -1,0 +1,79 @@
+/* ============================================================
+   Accordion Component Styles — Hienfeld Design System
+   Based on hienfeld.nl downloads page disclosure pattern.
+   ============================================================ */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  width: 100%;
+}
+
+.accordion__item {
+  background-color: var(--bg-primary);
+  border: 2px solid var(--color-gray-300);
+  border-radius: 0;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.accordion__item:hover {
+  border-color: var(--color-brand-600);
+}
+
+.accordion__item--open {
+  border-color: var(--color-brand-600);
+}
+
+.accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-3xl);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-text-lg);
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.accordion__trigger:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.accordion__chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: var(--spacing-3xl);
+  color: var(--color-gray-500);
+  transition: transform 0.3s ease;
+}
+
+.accordion__chevron--open {
+  transform: rotate(180deg);
+}
+
+.accordion__chevron svg {
+  width: 14px;
+  height: 14px;
+}
+
+.accordion__panel {
+  padding: 0 var(--spacing-3xl) var(--spacing-3xl);
+}
+
+.accordion__panel-content {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  color: var(--text-primary);
+}

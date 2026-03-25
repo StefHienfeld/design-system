@@ -1,0 +1,147 @@
+/* ============================================================
+   Dropdown Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- root ---------- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* ---------- trigger: shared reset ---------- */
+.dropdown__trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  transition: box-shadow 120ms ease;
+}
+
+.dropdown__trigger:focus-visible {
+  outline: none;
+}
+
+/* ---------- trigger: button ---------- */
+.dropdown__trigger--button {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  box-shadow: none;
+  padding: 10px 14px;
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  gap: var(--spacing-xs);
+}
+
+.dropdown__trigger--button:hover {
+  background: var(--bg-primary-hover);
+}
+
+.dropdown__trigger--button:focus-visible {
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.dropdown__button-label {
+  white-space: nowrap;
+}
+
+.dropdown__button-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: var(--fg-quaternary);
+}
+
+.dropdown__button-chevron svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- trigger: icon (dots-vertical) ---------- */
+.dropdown__trigger--icon {
+  width: 20px;
+  height: 20px;
+  color: var(--fg-quaternary);
+  border-radius: var(--radius-xs);
+}
+
+.dropdown__trigger--icon:hover {
+  color: var(--fg-quaternary-hover);
+}
+
+.dropdown__trigger--icon:focus-visible {
+  background: var(--bg-primary);
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.dropdown__trigger--icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- trigger: avatar ---------- */
+.dropdown__trigger--avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.dropdown__trigger--avatar:focus-visible {
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.dropdown__avatar-img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+}
+
+.dropdown__avatar-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--bg-tertiary);
+  color: var(--text-quaternary);
+  font-size: var(--font-size-text-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ---------- panel (menu wrapper) ---------- */
+.dropdown__panel {
+  position: absolute;
+  right: 0;
+  z-index: 100;
+  width: 248px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-secondary-alt);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+/* Panel offset depends on trigger variant */
+.dropdown--button .dropdown__panel,
+.dropdown--avatar .dropdown__panel {
+  top: 48px;
+}
+
+.dropdown--icon .dropdown__panel {
+  top: 28px;
+}

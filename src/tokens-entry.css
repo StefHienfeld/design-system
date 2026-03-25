@@ -1,0 +1,7 @@
+/* Hienfeld Design System — Tokens Only
+   Import this for access to all design tokens and the Graphik font
+   without any component styles. Works in any framework.
+   Usage: @import '@hienfeld/design-system/tokens.css'; */
+
+@import './fonts/fonts.css';
+@import './tokens/tokens.css';

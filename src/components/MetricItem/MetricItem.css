@@ -1,0 +1,262 @@
+/* ============================================================
+   MetricItem Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.metric-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+  font-family: var(--font-family-body);
+}
+
+/* ---------- content wrapper ---------- */
+.metric-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+  width: 100%;
+  padding: var(--spacing-2xl);
+}
+
+/* When an icon is present, the gap between the icon and the heading block
+   is larger (20px), matching the Figma "Icon 01" variant. */
+.metric-item--has-icon > .metric-item__content {
+  gap: var(--spacing-2xl);
+}
+
+/* Chart variant also uses 20px gap for the top-level content spacing. */
+.metric-item--has-chart > .metric-item__content {
+  gap: var(--spacing-2xl);
+}
+
+/* ---------- icon slot ---------- */
+.metric-item__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-success-secondary);
+  flex-shrink: 0;
+  color: var(--fg-success-secondary);
+}
+
+.metric-item__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- heading & number ---------- */
+.metric-item__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* ---------- label ---------- */
+.metric-item__label {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-tertiary);
+  width: 100%;
+  margin: 0;
+}
+
+/* Chart variants use a bolder label style (md/semibold, primary color). */
+.metric-item--has-chart .metric-item__label {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  color: var(--text-primary);
+}
+
+/* ---------- number + badge row ---------- */
+.metric-item__number-row {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: flex-end;
+  width: 100%;
+}
+
+/* ---------- value ---------- */
+.metric-item__value {
+  flex: 1 0 0;
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-display-sm);
+  line-height: var(--line-height-display-sm);
+  color: var(--text-primary);
+  margin: 0;
+  min-width: 0;
+  min-height: 1px;
+}
+
+/* ---------- trend badge ---------- */
+.metric-item__trend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xxs) var(--spacing-md) var(--spacing-xxs) var(--spacing-sm);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xs);
+  box-shadow: none;
+  flex-shrink: 0;
+}
+
+.metric-item__trend-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.metric-item__trend-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.metric-item__trend-text {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* ---------- inline trend (chart variant) ---------- */
+.metric-item__trend-inline {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  width: 100%;
+}
+
+.metric-item__change {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xxs);
+  flex-shrink: 0;
+}
+
+.metric-item__change-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.metric-item__change-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.metric-item__change-text {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  white-space: nowrap;
+  text-align: center;
+}
+
+.metric-item__change--positive .metric-item__change-icon,
+.metric-item__change--positive .metric-item__change-text {
+  color: var(--color-success-600);
+}
+
+.metric-item__change--negative .metric-item__change-icon,
+.metric-item__change--negative .metric-item__change-text {
+  color: var(--color-error-600);
+}
+
+.metric-item__trend-description {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1 0 0;
+  min-height: 1px;
+  margin: 0;
+}
+
+/* ---------- number + chart row ---------- */
+.metric-item__number-chart-row {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: flex-end;
+  width: 100%;
+}
+
+.metric-item__number-badge-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  flex: 1 0 0;
+  min-width: 0;
+  min-height: 1px;
+}
+
+/* ---------- chart slot ---------- */
+.metric-item__chart {
+  flex-shrink: 0;
+}
+
+/* ---------- actions footer ---------- */
+.metric-item__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  border-top: 1px solid var(--border-secondary);
+}
+
+/* ---------- dropdown menu button ---------- */
+.metric-item__dropdown {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--fg-quaternary);
+}
+
+.metric-item__dropdown:hover {
+  color: var(--fg-quaternary-hover);
+}
+
+.metric-item__dropdown svg {
+  width: 20px;
+  height: 20px;
+}

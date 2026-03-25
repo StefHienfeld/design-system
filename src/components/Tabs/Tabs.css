@@ -1,0 +1,363 @@
+/* ============================================================
+   Tabs Component Styles — Hienfeld Design System
+   Supports: underline | button-brand | button-gray | button-border | button-minimal
+   Sizes:    sm | md
+   ============================================================ */
+
+/* ==========================================================
+   SHARED — container
+   ========================================================== */
+.tabs {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+/* full width: tabs fill available space equally */
+.tabs--full-width .tabs__tab {
+  flex: 1 0 0;
+  min-width: 0;
+  justify-content: center;
+}
+
+/* ==========================================================
+   SHARED — individual tab (reset)
+   ========================================================== */
+.tabs__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  border: none;
+  background: transparent;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-quaternary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    color 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+/* ---------- disabled tab (all variants) ---------- */
+.tabs__tab--disabled {
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+
+.tabs__tab--disabled:hover {
+  color: var(--text-disabled);
+}
+
+/* ---------- icon ---------- */
+.tabs__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ---------- label ---------- */
+.tabs__label {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---------- count badge ---------- */
+.tabs__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-700);
+}
+
+/* ==========================================================
+   SIZE: sm (default)
+   ========================================================== */
+.tabs--sm .tabs__tab {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+}
+
+.tabs--sm .tabs__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.tabs--sm .tabs__count {
+  min-width: 20px;
+  height: 20px;
+  padding: 0 var(--spacing-md);
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+}
+
+/* ==========================================================
+   SIZE: md
+   ========================================================== */
+.tabs--md .tabs__tab {
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+}
+
+.tabs--md .tabs__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.tabs--md .tabs__count {
+  min-width: 24px;
+  height: 24px;
+  padding: 0 10px;
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+}
+
+/* ==========================================================
+   TYPE: underline (default)
+   ========================================================== */
+.tabs--underline {
+  border-bottom: 1px solid var(--border-secondary);
+  gap: var(--spacing-lg);
+}
+
+.tabs--underline .tabs__tab {
+  padding: 0 var(--spacing-xs);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  border-radius: 0;
+}
+
+.tabs--underline.tabs--sm .tabs__tab {
+  height: 32px;
+}
+
+.tabs--underline.tabs--md .tabs__tab {
+  height: 36px;
+}
+
+.tabs--underline .tabs__tab:hover {
+  color: var(--text-secondary-hover);
+}
+
+.tabs--underline .tabs__tab:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+  border-radius: var(--radius-xs) var(--radius-xs) 0 0;
+}
+
+/* active */
+.tabs--underline .tabs__tab--active {
+  color: var(--text-brand-secondary);
+  border-bottom-color: var(--color-brand-600);
+}
+
+.tabs--underline .tabs__tab--active:hover {
+  color: var(--text-brand-secondary);
+}
+
+/* active count badge */
+.tabs--underline .tabs__tab--active .tabs__count {
+  background: var(--color-brand-50);
+  border-color: var(--color-brand-200);
+  color: var(--text-brand-secondary);
+}
+
+/* ==========================================================
+   TYPE: button-brand
+   ========================================================== */
+.tabs--button-brand {
+  gap: var(--spacing-xs);
+}
+
+.tabs--button-brand .tabs__tab {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-xxs);
+  overflow: clip;
+}
+
+.tabs--button-brand.tabs--sm .tabs__tab {
+  height: 36px;
+}
+
+.tabs--button-brand.tabs--md .tabs__tab {
+  height: 44px;
+}
+
+.tabs--button-brand .tabs__tab:hover {
+  color: var(--text-secondary-hover);
+}
+
+.tabs--button-brand .tabs__tab:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* active */
+.tabs--button-brand .tabs__tab--active {
+  background: var(--color-brand-50);
+  color: var(--text-brand-secondary);
+}
+
+.tabs--button-brand .tabs__tab--active:hover {
+  color: var(--text-brand-secondary);
+}
+
+/* active count badge */
+.tabs--button-brand .tabs__tab--active .tabs__count {
+  background: var(--color-brand-50);
+  border-color: var(--color-brand-200);
+  color: var(--text-brand-secondary);
+}
+
+/* ==========================================================
+   TYPE: button-gray
+   ========================================================== */
+.tabs--button-gray {
+  gap: var(--spacing-xs);
+}
+
+.tabs--button-gray .tabs__tab {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-xxs);
+  overflow: clip;
+}
+
+.tabs--button-gray.tabs--sm .tabs__tab {
+  height: 36px;
+}
+
+.tabs--button-gray.tabs--md .tabs__tab {
+  height: 44px;
+}
+
+.tabs--button-gray .tabs__tab:hover {
+  color: var(--text-secondary-hover);
+}
+
+.tabs--button-gray .tabs__tab:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* active */
+.tabs--button-gray .tabs__tab--active {
+  background: var(--bg-active);
+  color: var(--text-secondary);
+}
+
+.tabs--button-gray .tabs__tab--active:hover {
+  color: var(--text-secondary);
+}
+
+/* ==========================================================
+   TYPE: button-border
+   ========================================================== */
+.tabs--button-border {
+  background: var(--color-gray-50);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-xxs);
+  padding: var(--spacing-xs);
+  gap: var(--spacing-xs);
+}
+
+.tabs--button-border .tabs__tab {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-xxs);
+  overflow: clip;
+}
+
+.tabs--button-border.tabs--sm .tabs__tab {
+  height: 36px;
+}
+
+.tabs--button-border.tabs--md .tabs__tab {
+  height: 44px;
+}
+
+.tabs--button-border .tabs__tab:hover {
+  color: var(--text-secondary-hover);
+}
+
+.tabs--button-border .tabs__tab:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* active */
+.tabs--button-border .tabs__tab--active {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.tabs--button-border .tabs__tab--active:hover {
+  color: var(--text-secondary);
+}
+
+.tabs--button-border .tabs__tab--active:focus-visible {
+  box-shadow:
+    var(--shadow-sm),
+    var(--focus-ring-shadow);
+}
+
+/* ==========================================================
+   TYPE: button-minimal
+   ========================================================== */
+.tabs--button-minimal {
+  background: var(--color-gray-50);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-xxs);
+  gap: var(--spacing-xxs);
+}
+
+.tabs--button-minimal .tabs__tab {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-xxs);
+  overflow: clip;
+}
+
+.tabs--button-minimal.tabs--sm .tabs__tab {
+  height: 36px;
+}
+
+.tabs--button-minimal.tabs--md .tabs__tab {
+  height: 44px;
+}
+
+.tabs--button-minimal .tabs__tab:hover {
+  color: var(--text-secondary-hover);
+}
+
+.tabs--button-minimal .tabs__tab:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* active */
+.tabs--button-minimal .tabs__tab--active {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-primary);
+  box-shadow: none;
+}
+
+.tabs--button-minimal .tabs__tab--active:hover {
+  color: var(--text-secondary);
+}
+
+.tabs--button-minimal .tabs__tab--active:focus-visible {
+  box-shadow: var(--focus-ring-shadow);
+}

@@ -1,0 +1,103 @@
+/* ============================================================
+   PageHeader Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- root ---------- */
+.page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-xl);
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-family-body);
+}
+
+/* ---------- breadcrumbs slot ---------- */
+.page-header__breadcrumbs {
+  flex-shrink: 0;
+}
+
+/* ---------- content row (text + actions + search) ---------- */
+.page-header__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--spacing-2xl) var(--spacing-xl);
+  width: 100%;
+}
+
+/* ---------- text + supporting text + badges ---------- */
+.page-header__text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  flex: 1 0 0;
+  min-width: 320px;
+}
+
+/* title + description wrapper */
+.page-header__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+/* ---------- title ---------- */
+.page-header__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-display-sm);
+  line-height: var(--line-height-display-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0;
+  width: 100%;
+}
+
+/* ---------- description ---------- */
+.page-header__description {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+  margin: 0;
+  width: 100%;
+}
+
+/* ---------- badges slot ---------- */
+.page-header__badges {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+/* ---------- actions slot ---------- */
+.page-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  flex-shrink: 0;
+}
+
+/* ---------- search slot ---------- */
+.page-header__search {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  min-width: 200px;
+  max-width: 320px;
+}
+
+/* ---------- divider ---------- */
+.page-header__divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-secondary);
+  flex-shrink: 0;
+}

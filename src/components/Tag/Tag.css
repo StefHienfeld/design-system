@@ -1,0 +1,229 @@
+/* ============================================================
+   Tag Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border-primary);
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  cursor: default;
+  box-sizing: border-box;
+  white-space: nowrap;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+/* ============================================================
+   SIZES
+   ============================================================ */
+
+/* --- sm: 24px height --- */
+.tag--sm {
+  height: 24px;
+  padding: 2px 5px;
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+  gap: var(--spacing-xs);
+}
+
+/* --- md: 24px height --- */
+.tag--md {
+  height: 24px;
+  padding: 2px 7px;
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  gap: var(--spacing-xs);
+}
+
+/* --- lg: 28px height --- */
+.tag--lg {
+  height: 28px;
+  padding: 2px 7px;
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  gap: var(--spacing-xs);
+}
+
+/* ============================================================
+   PADDING ADJUSTMENTS FOR ICON / ACTION
+   ============================================================ */
+
+/* When there is a leading icon (dot, avatar, checkbox),
+   reduce left padding so the visual stays tight. */
+.tag--sm.tag--has-leading {
+  padding-left: 3px;
+}
+
+.tag--md.tag--has-leading,
+.tag--lg.tag--has-leading {
+  padding-left: 4px;
+}
+
+/* When there is a trailing action (x-close, count),
+   reduce right padding. */
+.tag--sm.tag--has-trailing {
+  padding-right: 3px;
+}
+
+.tag--md.tag--has-trailing,
+.tag--lg.tag--has-trailing {
+  padding-right: 4px;
+}
+
+/* ============================================================
+   DOT ICON
+   ============================================================ */
+.tag__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--fg-success-secondary);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   AVATAR
+   ============================================================ */
+.tag__avatar {
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.tag--sm .tag__avatar,
+.tag--md .tag__avatar {
+  width: 16px;
+  height: 16px;
+}
+
+.tag--lg .tag__avatar {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================================
+   CHECKBOX
+   ============================================================ */
+.tag__checkbox {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-xxs);
+  border: 1px solid var(--border-primary);
+  background-color: var(--bg-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.tag__checkbox--checked {
+  background-color: var(--bg-brand-solid);
+  border-color: var(--bg-brand-solid);
+}
+
+/* checkmark icon */
+.tag__checkbox-icon {
+  width: 8px;
+  height: 8px;
+  color: var(--fg-white);
+  display: none;
+}
+
+.tag__checkbox--checked .tag__checkbox-icon {
+  display: block;
+}
+
+/* make the entire tag clickable when used as a checkbox */
+.tag--checkbox {
+  cursor: pointer;
+  user-select: none;
+}
+
+.tag--checkbox:hover {
+  background-color: var(--bg-primary-hover);
+}
+
+.tag--checkbox:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* ============================================================
+   X CLOSE ACTION
+   ============================================================ */
+.tag__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--fg-quaternary);
+  border-radius: var(--radius-xxs);
+  transition: color 120ms ease;
+}
+
+.tag__close:hover {
+  color: var(--fg-quaternary-hover);
+}
+
+.tag__close:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.tag--sm .tag__close,
+.tag--md .tag__close {
+  width: 14px;
+  height: 14px;
+}
+
+.tag--lg .tag__close {
+  width: 16px;
+  height: 16px;
+}
+
+.tag__close svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================================================
+   COUNT ACTION
+   ============================================================ */
+.tag__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  padding: 0 6px;
+  min-width: 18px;
+  height: 18px;
+}
+
+/* ============================================================
+   TEXT
+   ============================================================ */
+.tag__text {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

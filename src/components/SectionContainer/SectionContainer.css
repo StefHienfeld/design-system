@@ -1,0 +1,32 @@
+/* ============================================================
+   SectionContainer Component Styles — Hienfeld Design System
+   The repeating 12-column grid container from hienfeld.nl.
+   ============================================================ */
+
+.section-container {
+  width: 100%;
+  padding-top: var(--layout-section-spacing);
+  padding-bottom: var(--layout-section-spacing);
+}
+
+.section-container--no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.section-container__inner {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0 var(--layout-column-gap);
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 var(--layout-gutter);
+}
+
+.section-container__col-full { grid-column: 1 / -1; }
+.section-container__col-6-left { grid-column: 1 / 7; }
+.section-container__col-6-right { grid-column: 7 / 13; }
+.section-container__col-5-left { grid-column: 1 / 6; }
+.section-container__col-5-right { grid-column: 8 / 13; }
+.section-container__col-8 { grid-column: 1 / 9; }
+.section-container__col-4 { grid-column: span 4; }

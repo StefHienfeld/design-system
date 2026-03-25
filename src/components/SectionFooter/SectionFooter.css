@@ -1,0 +1,107 @@
+/* ============================================================
+   SectionFooter Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.section-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   TYPE VARIANTS
+   ============================================================ */
+
+/* --- section: no horizontal padding, larger gap --- */
+.section-footer--section {
+  gap: var(--spacing-2xl);
+}
+
+/* --- card: horizontal + bottom padding, smaller gap --- */
+.section-footer--card {
+  gap: var(--spacing-xl);
+  padding: 0 var(--spacing-3xl) var(--spacing-xl);
+}
+
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+.section-footer__divider {
+  width: 100%;
+  height: 1px;
+  flex-shrink: 0;
+  background-color: var(--border-secondary);
+}
+
+/* ============================================================
+   CONTENT ROW
+   ============================================================ */
+.section-footer__content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.section-footer--section .section-footer__content {
+  gap: var(--spacing-2xl);
+}
+
+.section-footer--card .section-footer__content {
+  gap: var(--spacing-xl);
+}
+
+/* ============================================================
+   SLOTS
+   ============================================================ */
+
+/* --- button group: flex-shrink so it stays at its intrinsic size --- */
+.section-footer__button-group {
+  flex-shrink: 0;
+}
+
+/* --- secondary action: tertiary link button --- */
+.section-footer__secondary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-xxs);
+  background: transparent;
+  color: var(--text-tertiary);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 120ms ease;
+}
+
+.section-footer__secondary-action:hover {
+  color: var(--text-tertiary-hover);
+}
+
+.section-footer__secondary-action:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* --- actions: grows to fill remaining space, right-aligned --- */
+.section-footer__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 0 0;
+  min-width: 0;
+  min-height: 1px;
+  gap: var(--spacing-lg);
+}

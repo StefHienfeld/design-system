@@ -1,0 +1,104 @@
+/* ============================================================
+   ButtonGroup Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- container ---------- */
+.button-group {
+  display: inline-flex;
+  position: relative;
+  border-radius: var(--radius-xxs);
+  overflow: hidden;
+  box-shadow: none;
+  border: 1px solid var(--border-primary);
+  box-sizing: border-box;
+}
+
+/* ---------- base segment ---------- */
+.button-group__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  box-sizing: border-box;
+  position: relative;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+/* right divider border between items (not on the last one) */
+.button-group__item:not(:last-child) {
+  border-right: 1px solid var(--border-primary);
+}
+
+/* ---------- variant: text-only ---------- */
+.button-group__item--text-only {
+  padding: 8px 16px;
+  gap: 0;
+}
+
+/* ---------- variant: leading (icon + text) ---------- */
+.button-group__item--leading {
+  padding: 8px 16px 8px 14px;
+  gap: 6px;
+}
+
+/* ---------- variant: icon-only ---------- */
+.button-group__item--icon-only {
+  padding: 8px 12px;
+  gap: 0;
+}
+
+/* ---------- icon slot ---------- */
+.button-group__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.button-group__icon svg {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+/* ---------- text slot ---------- */
+.button-group__text {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ============================================================
+   STATES
+   ============================================================ */
+
+/* --- hover --- */
+.button-group__item:hover {
+  background-color: var(--bg-primary-hover);
+  color: var(--text-secondary-hover);
+}
+
+/* --- focus-visible --- */
+.button-group__item:focus-visible {
+  outline: none;
+  z-index: 1;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* --- disabled --- */
+.button-group__item:disabled,
+.button-group__item:disabled:hover {
+  background-color: var(--bg-disabled);
+  color: var(--fg-disabled);
+  cursor: not-allowed;
+}

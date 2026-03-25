@@ -1,0 +1,183 @@
+/* ============================================================
+   Hienfeld Design System — Showcase Part 2
+   Clean, contained, readable layout
+   ============================================================ */
+
+.s2 {
+  min-height: 100vh;
+  background: var(--color-gray-50);
+  color: var(--text-primary);
+}
+
+/* ── HERO ── */
+.s2-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 32px;
+  background: linear-gradient(145deg, var(--color-brand-700) 0%, var(--color-brand-600) 40%, var(--color-brand-500) 100%);
+}
+
+.s2-hero__content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.s2-hero__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-display-md);
+  line-height: var(--line-height-display-md);
+  font-weight: var(--font-weight-semibold);
+  color: #fff;
+}
+
+.s2-hero__subtitle {
+  font-size: var(--font-size-text-lg);
+  line-height: var(--line-height-text-lg);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.s2-hero__stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 8px;
+}
+
+.s2-hero__stat {
+  font-size: var(--font-size-text-sm);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.s2-hero__stat strong {
+  display: block;
+  font-size: var(--font-size-display-xs);
+  font-weight: var(--font-weight-semibold);
+  color: #fff;
+}
+
+/* ── BODY ── */
+.s2-body {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* ── SECTION ── */
+.s2-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.s2-section__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-text-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--color-brand-600);
+}
+
+.s2-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── SUBSECTION ── */
+.s2-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.s2-sub__label {
+  font-size: var(--font-size-text-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-quaternary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── CARD: every demo sits inside a white card ── */
+.s2-card {
+  background: #fff;
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.s2-card--no-pad {
+  padding: 0;
+}
+
+.s2-card--flush {
+  padding: 0;
+  overflow: visible;
+}
+
+/* ── ROW / GRID helpers ── */
+.s2-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.s2-row--center {
+  align-items: center;
+}
+
+.s2-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.s2-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.s2-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── CONTAINED SIDEBAR PREVIEW ── */
+.s2-sidebar-frame {
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 520px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.s2-sidebar-frame > * {
+  height: 100% !important;
+  position: relative !important;
+}
+
+/* ── SMALL LABEL inside cards ── */
+.s2-tiny-label {
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-placeholder);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}

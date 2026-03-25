@@ -1,0 +1,58 @@
+/* ============================================================
+   ProductCard Component Styles — Hienfeld Design System
+   Image-forward product card from hienfeld.nl product listings.
+   ============================================================ */
+
+.product-card {
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  width: 100%;
+}
+
+.product-card__image-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+}
+
+.product-card__image-wrap::after {
+  content: '';
+  display: block;
+  padding-bottom: 122%;
+}
+
+.product-card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.05);
+}
+
+.product-card__label {
+  margin-top: var(--spacing-xl);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-display-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-display-xs);
+  color: var(--text-primary);
+}
+
+.product-card__color-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  margin-right: var(--spacing-md);
+  vertical-align: middle;
+}

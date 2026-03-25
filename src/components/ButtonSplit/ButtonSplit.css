@@ -1,0 +1,253 @@
+/* ============================================================
+   ButtonSplit Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- container ---------- */
+.button-split {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: var(--radius-xxs);
+  box-shadow: none;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* ---------- shared button base ---------- */
+.button-split__main,
+.button-split__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  box-sizing: border-box;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    box-shadow 120ms ease,
+    border-color 120ms ease;
+}
+
+/* ---------- main button (flat right corners) ---------- */
+.button-split__main {
+  border-radius: var(--radius-xxs) 0 0 var(--radius-xxs);
+  gap: var(--spacing-xs);
+}
+
+/* ---------- toggle button (flat left corners) ---------- */
+.button-split__toggle {
+  border-radius: 0 var(--radius-xxs) var(--radius-xxs) 0;
+}
+
+/* ---------- text wrapper ---------- */
+.button-split__text {
+  padding: 0 var(--spacing-xxs);
+}
+
+/* ---------- divider ---------- */
+.button-split__divider {
+  width: 1px;
+  align-self: stretch;
+}
+
+/* ============================================================
+   SIZES
+   ============================================================ */
+
+/* --- sm: 36px height --- */
+.button-split--sm .button-split__main,
+.button-split--sm .button-split__toggle {
+  height: 36px;
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+}
+
+.button-split--sm .button-split__main {
+  padding: 8px 12px;
+}
+
+.button-split--sm .button-split__toggle {
+  padding: 8px;
+}
+
+/* --- md: 40px height --- */
+.button-split--md .button-split__main,
+.button-split--md .button-split__toggle {
+  height: 40px;
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+}
+
+.button-split--md .button-split__main {
+  padding: 10px 14px;
+}
+
+.button-split--md .button-split__toggle {
+  padding: 10px;
+}
+
+/* --- lg: 44px height --- */
+.button-split--lg .button-split__main,
+.button-split--lg .button-split__toggle {
+  height: 44px;
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+}
+
+.button-split--lg .button-split__main {
+  padding: 10px 16px;
+}
+
+.button-split--lg .button-split__toggle {
+  padding: 12px;
+}
+
+/* --- xl: 48px height --- */
+.button-split--xl .button-split__main,
+.button-split--xl .button-split__toggle {
+  height: 48px;
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+}
+
+.button-split--xl .button-split__main {
+  padding: 12px 18px;
+}
+
+.button-split--xl .button-split__toggle {
+  padding: 14px;
+}
+
+/* ============================================================
+   HIERARCHY — PRIMARY
+   ============================================================ */
+.button-split--primary .button-split__main,
+.button-split--primary .button-split__toggle {
+  background-color: var(--bg-brand-solid);
+  color: var(--text-white);
+}
+
+.button-split--primary .button-split__main:hover,
+.button-split--primary .button-split__toggle:hover {
+  background-color: var(--bg-brand-solid-hover);
+}
+
+.button-split--primary .button-split__main:focus-visible,
+.button-split--primary .button-split__toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.button-split--primary .button-split__divider {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================================
+   HIERARCHY — SECONDARY
+   ============================================================ */
+.button-split--secondary .button-split__main,
+.button-split--secondary .button-split__toggle {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-primary);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.button-split--secondary .button-split__main {
+  border-left: 1px solid var(--border-primary);
+}
+
+.button-split--secondary .button-split__toggle {
+  border-right: 1px solid var(--border-primary);
+}
+
+.button-split--secondary .button-split__main:hover,
+.button-split--secondary .button-split__toggle:hover {
+  background-color: var(--bg-primary-hover);
+  color: var(--text-secondary-hover);
+}
+
+.button-split--secondary .button-split__main:focus-visible,
+.button-split--secondary .button-split__toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring-shadow);
+}
+
+.button-split--secondary .button-split__divider {
+  background-color: var(--border-primary);
+}
+
+/* ============================================================
+   DISABLED STATE (all hierarchies)
+   ============================================================ */
+.button-split__main:disabled,
+.button-split__main:disabled:hover,
+.button-split__toggle:disabled,
+.button-split__toggle:disabled:hover {
+  background-color: var(--bg-disabled);
+  border-color: var(--border-disabled-subtle);
+  color: var(--fg-disabled);
+  cursor: not-allowed;
+}
+
+/* override container shadow when disabled */
+.button-split:has(.button-split__main:disabled) {
+  box-shadow: none;
+}
+
+/* disabled divider */
+.button-split:has(.button-split__main:disabled) .button-split__divider {
+  background-color: var(--border-disabled-subtle);
+}
+
+/* ============================================================
+   LOADING STATE
+   ============================================================ */
+.button-split--loading {
+  pointer-events: none;
+}
+
+/* spinner */
+.button-split__spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  animation: button-split-spin 700ms linear infinite;
+}
+
+.button-split__spinner svg {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+@keyframes button-split-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================================
+   DROPDOWN
+   ============================================================ */
+.button-split__dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: var(--spacing-xs);
+  z-index: 1000;
+}
+
+/* chevron icon sizing */
+.button-split__toggle svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}

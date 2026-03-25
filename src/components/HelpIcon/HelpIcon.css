@@ -1,0 +1,152 @@
+/* ============================================================
+   HelpIcon Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- wrapper ---------- */
+.help-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg-quaternary);
+  cursor: help;
+  transition: color 150ms;
+}
+
+.help-icon:hover,
+.help-icon:focus-visible {
+  color: var(--fg-quaternary-hover);
+}
+
+.help-icon:focus-visible {
+  outline: none;
+  border-radius: var(--radius-xxs);
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* ---------- icon SVG ---------- */
+.help-icon__svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ---------- tooltip (shared base) ---------- */
+.help-icon__tooltip {
+  position: absolute;
+  z-index: 9999;
+  max-width: 296px;
+  background: var(--bg-primary-solid);
+  border-radius: var(--radius-xxs);
+  box-shadow: var(--shadow-lg);
+  pointer-events: none;
+  white-space: normal;
+
+  /* show/hide transition */
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 150ms,
+    visibility 150ms;
+}
+
+.help-icon__tooltip--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- simple (no supporting text): px 12, py 8 --- */
+.help-icon__tooltip--simple {
+  padding: 8px 12px;
+}
+
+/* --- rich (with supporting text): 12 all sides --- */
+.help-icon__tooltip--rich {
+  padding: 12px;
+}
+
+/* ---------- tooltip text ---------- */
+.help-icon__tooltip-title {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-white);
+}
+
+.help-icon__tooltip-supporting {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-xs);
+  line-height: var(--line-height-text-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--tooltip-supporting-text);
+  margin-top: 4px;
+}
+
+/* ---------- arrow (6px CSS triangle) ---------- */
+.help-icon__arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+}
+
+/* ---------- positioning: top ---------- */
+.help-icon__tooltip--top {
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.help-icon__tooltip--top .help-icon__arrow {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: none;
+  border-top-color: var(--bg-primary-solid);
+}
+
+/* ---------- positioning: bottom ---------- */
+.help-icon__tooltip--bottom {
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.help-icon__tooltip--bottom .help-icon__arrow {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top: none;
+  border-bottom-color: var(--bg-primary-solid);
+}
+
+/* ---------- positioning: left ---------- */
+.help-icon__tooltip--left {
+  right: calc(100% + 4px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.help-icon__tooltip--left .help-icon__arrow {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right: none;
+  border-left-color: var(--bg-primary-solid);
+}
+
+/* ---------- positioning: right ---------- */
+.help-icon__tooltip--right {
+  left: calc(100% + 4px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.help-icon__tooltip--right .help-icon__arrow {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: none;
+  border-right-color: var(--bg-primary-solid);
+}

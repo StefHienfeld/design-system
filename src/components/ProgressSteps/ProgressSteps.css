@@ -1,0 +1,362 @@
+/* ============================================================
+   ProgressSteps Component Styles — Hienfeld Design System
+   ============================================================ */
+
+/* ---------- root container ---------- */
+.progress-steps {
+  font-family: var(--font-family-body);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+/* ---------- layout: vertical ---------- */
+.progress-steps--vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+/* ---------- layout: horizontal-centered ---------- */
+.progress-steps--horizontal-centered {
+  align-items: flex-start;
+}
+
+/* ============================================================
+   Step item
+   ============================================================ */
+.progress-steps__step {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--spacing-sm);
+}
+
+.progress-steps--sm .progress-steps__step {
+  height: 24px;
+}
+
+.progress-steps--md .progress-steps__step {
+  height: 32px;
+  gap: var(--spacing-md);
+}
+
+/* Incomplete step gets reduced opacity */
+.progress-steps__step--incomplete {
+  opacity: 0.6;
+}
+
+/* ---------- horizontal-centered step wrapper ---------- */
+.progress-steps__step-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+/* The row that holds icon + connector segments in centered layout */
+.progress-steps__step-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ---------- vertical step wrapper ---------- */
+.progress-steps__vertical-step {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.progress-steps__vertical-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.progress-steps__vertical-content {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--spacing-4xl);
+  min-height: 48px;
+  justify-content: center;
+}
+
+.progress-steps__vertical-step:last-child .progress-steps__vertical-content {
+  padding-bottom: 0;
+}
+
+/* ============================================================
+   Step icon (circle)
+   ============================================================ */
+.progress-steps__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- sizes --- */
+.progress-steps--sm .progress-steps__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.progress-steps--md .progress-steps__icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* --- state: incomplete --- */
+.progress-steps__icon--incomplete {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-secondary);
+}
+
+/* check type incomplete has slightly different border */
+.progress-steps--check .progress-steps__icon--incomplete {
+  border-width: 1.5px;
+  border-color: var(--border-disabled-subtle);
+}
+
+.progress-steps--md.progress-steps--check .progress-steps__icon--incomplete {
+  border-width: 2px;
+}
+
+/* --- state: current (number type) --- */
+.progress-steps__icon--current.progress-steps__icon--number {
+  background: var(--color-brand-50);
+  border: 1px solid var(--border-brand);
+}
+
+/* --- state: current (check type) --- */
+.progress-steps__icon--current.progress-steps__icon--check {
+  background: var(--bg-brand-solid);
+  box-shadow:
+    0 0 0 2px var(--bg-primary),
+    0 0 0 4px var(--focus-ring-color);
+}
+
+/* --- state: complete (number type) --- */
+.progress-steps__icon--complete.progress-steps__icon--number {
+  background: var(--color-success-600);
+}
+
+/* --- state: complete (check type) --- */
+.progress-steps__icon--complete.progress-steps__icon--check {
+  background: var(--bg-brand-solid);
+}
+
+/* ============================================================
+   Inner icon content
+   ============================================================ */
+
+/* --- dot for check type (incomplete + current) --- */
+.progress-steps__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+}
+
+.progress-steps--md .progress-steps__dot {
+  width: 10px;
+  height: 10px;
+}
+
+.progress-steps__icon--incomplete .progress-steps__dot {
+  background: var(--border-disabled-subtle);
+}
+
+.progress-steps__icon--current .progress-steps__dot {
+  background: var(--bg-primary);
+}
+
+/* --- checkmark svg --- */
+.progress-steps__check-svg {
+  color: var(--fg-white);
+}
+
+.progress-steps--sm .progress-steps__check-svg {
+  width: 12px;
+  height: 12px;
+}
+
+.progress-steps--md .progress-steps__check-svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* --- step number text --- */
+.progress-steps__number {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.progress-steps--sm .progress-steps__number {
+  font-size: var(--font-size-text-xs);
+}
+
+.progress-steps--md .progress-steps__number {
+  font-size: var(--font-size-text-sm);
+}
+
+.progress-steps__icon--incomplete .progress-steps__number {
+  color: var(--text-disabled);
+}
+
+.progress-steps__icon--current .progress-steps__number {
+  color: var(--text-brand-tertiary);
+}
+
+.progress-steps__icon--complete .progress-steps__number {
+  color: var(--fg-white);
+}
+
+/* ============================================================
+   Step label
+   ============================================================ */
+.progress-steps__label {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.progress-steps--sm .progress-steps__label {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+}
+
+.progress-steps--md .progress-steps__label {
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+}
+
+/* label colors per state */
+.progress-steps__label--incomplete {
+  color: var(--text-secondary);
+}
+
+.progress-steps__label--current {
+  color: var(--text-brand-tertiary);
+}
+
+/* number type current uses the 700 shade */
+.progress-steps--number .progress-steps__label--current {
+  color: var(--text-brand-secondary);
+}
+
+.progress-steps__label--complete {
+  color: var(--text-secondary);
+}
+
+/* ---------- centered layout label wrapper ---------- */
+.progress-steps__label-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  gap: var(--spacing-xxs);
+}
+
+.progress-steps__label-group .progress-steps__label {
+  white-space: normal;
+}
+
+/* ---------- description (centered layout) ---------- */
+.progress-steps__description {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+/* ---------- vertical layout labels ---------- */
+.progress-steps__vertical-label {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+}
+
+.progress-steps--sm .progress-steps__vertical-label {
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+}
+
+.progress-steps--md .progress-steps__vertical-label {
+  font-size: var(--font-size-text-md);
+  line-height: var(--line-height-text-md);
+}
+
+.progress-steps__vertical-label--incomplete {
+  color: var(--text-secondary);
+}
+
+.progress-steps__vertical-label--current {
+  color: var(--text-brand-tertiary);
+}
+
+.progress-steps--number .progress-steps__vertical-label--current {
+  color: var(--text-brand-secondary);
+}
+
+.progress-steps__vertical-label--complete {
+  color: var(--text-secondary);
+}
+
+.progress-steps__vertical-description {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-tertiary);
+  margin-top: var(--spacing-xxs);
+}
+
+/* ============================================================
+   Connector lines
+   ============================================================ */
+
+/* --- horizontal connector --- */
+.progress-steps__connector {
+  width: 20px;
+  height: 0;
+  border-top: 1px solid var(--border-secondary);
+  flex-shrink: 0;
+}
+
+/* --- centered layout connector (fills available space) --- */
+.progress-steps__connector--flex {
+  width: auto;
+  flex: 1;
+  min-width: 20px;
+}
+
+/* completed connector */
+.progress-steps__connector--complete {
+  border-top-color: var(--border-brand);
+}
+
+/* --- vertical connector --- */
+.progress-steps__connector--vertical {
+  width: 0;
+  height: 100%;
+  min-height: 16px;
+  flex: 1;
+  border-top: none;
+  border-left: 1px solid var(--border-secondary);
+}
+
+.progress-steps__connector--vertical.progress-steps__connector--complete {
+  border-left-color: var(--border-brand);
+}

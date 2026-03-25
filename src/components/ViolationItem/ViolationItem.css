@@ -1,0 +1,122 @@
+/* ============================================================
+   ViolationItem Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- base ---------- */
+.violation-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl) var(--spacing-2xl);
+  min-height: 50px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xxs);
+  font-family: var(--font-family-body);
+}
+
+/* ---------- status modifiers ---------- */
+.violation-item--fail {
+  border-color: var(--color-error-200);
+  background-color: var(--color-error-50);
+}
+
+.violation-item--pass {
+  border-color: var(--color-success-200);
+  background-color: var(--color-success-50);
+}
+
+/* ---------- field (left label) ---------- */
+.violation-item__field {
+  width: 113px;
+  flex-shrink: 0;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ---------- actual section (label + value badge) ---------- */
+.violation-item__actual {
+  display: flex;
+  flex: 1 0 0;
+  gap: var(--spacing-sm);
+  align-items: center;
+  min-width: 0;
+  min-height: 1px;
+}
+
+.violation-item__actual-label {
+  flex-shrink: 0;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  text-align: center;
+  margin: 0;
+}
+
+/* ---------- value badge (brand / blue) ---------- */
+.violation-item__value-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-xs) 10px;
+  background-color: var(--color-brand-50);
+  border: 1px solid var(--color-brand-200);
+  border-radius: var(--radius-xs);
+  flex-shrink: 0;
+}
+
+.violation-item__value-badge-text {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--color-brand-700);
+  white-space: nowrap;
+  text-align: center;
+  margin: 0;
+}
+
+/* ---------- rule section (label + operator badge) ---------- */
+.violation-item__rule {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.violation-item__rule-label {
+  flex-shrink: 0;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  text-align: center;
+  margin: 0;
+}
+
+/* ---------- operator badge (error / red) ---------- */
+.violation-item__operator-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-xs) 10px;
+  background-color: var(--color-error-50);
+  border: 1px solid var(--color-error-200);
+  border-radius: var(--radius-xs);
+  flex-shrink: 0;
+}
+
+.violation-item__operator-badge-text {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  color: var(--color-error-700);
+  white-space: nowrap;
+  text-align: center;
+  margin: 0;
+}

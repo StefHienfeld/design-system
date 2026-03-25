@@ -1,0 +1,155 @@
+/* ============================================================
+   VerificationCode Component Styles — Hienfeld Design System
+   Specs sourced from Figma (confirmed).
+   ============================================================ */
+
+/* ---------- wrapper ---------- */
+.verification-code {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* ---------- label ---------- */
+.verification-code__label {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+}
+
+/* ---------- hint ---------- */
+.verification-code__hint {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-tertiary);
+}
+
+/* ---------- error ---------- */
+.verification-code__error {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-text-sm);
+  line-height: var(--line-height-text-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-error-primary);
+}
+
+/* ---------- input row ---------- */
+.verification-code__inputs {
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- dash separator (6-digit layout) ---------- */
+.verification-code__dash {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-display-xl);
+  line-height: var(--line-height-display-xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-placeholder-subtle);
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- input box base ---------- */
+.verification-code__input {
+  box-sizing: border-box;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-xs);
+  background: var(--bg-primary);
+  box-shadow: none;
+  text-align: center;
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  caret-color: var(--border-brand);
+  padding: 0;
+  outline: none;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.verification-code__input::placeholder {
+  color: var(--text-placeholder-subtle);
+}
+
+/* focused state */
+.verification-code__input:focus {
+  border-color: var(--border-brand);
+  box-shadow: var(--focus-ring-shadow);
+}
+
+/* error state */
+.verification-code--error .verification-code__input {
+  border-color: var(--border-error);
+}
+
+.verification-code--error .verification-code__input:focus {
+  border-color: var(--border-error);
+  box-shadow:
+    0 0 0 4px var(--color-error-100),
+    0 0 0 2px var(--bg-primary);
+}
+
+/* ============================================================
+   SIZE — sm: 64px x 64px, gap 8px, display-lg font
+   ============================================================ */
+.verification-code--sm .verification-code__inputs {
+  gap: var(--spacing-md);
+}
+
+.verification-code--sm .verification-code__input {
+  width: 64px;
+  height: 64px;
+  font-size: var(--font-size-display-lg);
+  line-height: var(--line-height-display-lg);
+  letter-spacing: -0.96px;
+}
+
+.verification-code--sm .verification-code__dash {
+  width: var(--spacing-md);
+}
+
+/* ============================================================
+   SIZE — md: 80px x 80px, gap 12px, display-lg font
+   ============================================================ */
+.verification-code--md .verification-code__inputs {
+  gap: var(--spacing-lg);
+}
+
+.verification-code--md .verification-code__input {
+  width: 80px;
+  height: 80px;
+  font-size: var(--font-size-display-lg);
+  line-height: var(--line-height-display-lg);
+  letter-spacing: -0.96px;
+}
+
+.verification-code--md .verification-code__dash {
+  width: var(--spacing-lg);
+}
+
+/* ============================================================
+   SIZE — lg: 96px x 96px, gap 12px, display-xl font
+   ============================================================ */
+.verification-code--lg .verification-code__inputs {
+  gap: var(--spacing-lg);
+}
+
+.verification-code--lg .verification-code__input {
+  width: 96px;
+  height: 96px;
+  font-size: var(--font-size-display-xl);
+  line-height: var(--line-height-display-xl);
+  letter-spacing: -2px;
+}
+
+.verification-code--lg .verification-code__dash {
+  width: var(--spacing-lg);
+}
